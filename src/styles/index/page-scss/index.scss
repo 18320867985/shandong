@@ -1,0 +1,20 @@
+/*index*/
+
+section{
+    /* display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; */
+    width: 100%;
+    background:#999;
+}
+
+section {
+    padding: 20px;
+    columns: 200px 4;
+    column-rule:  2px solid #777;
+     column-gap: 20px;
+    text-indent: 2rem;
+    line-height: 2rem;
+    
+    
+}

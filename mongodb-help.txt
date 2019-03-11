@@ -1,0 +1,161 @@
+
+1.命令行下运行 MongoDB 服务器
+为了从命令提示符下运行 MongoDB 服务器，你必须从 MongoDB 目录的 bin 目录中执行 mongod.exe 文件。
+C:\mongodb\bin\mongod --dbpath c:\data\db
+如果执行成功，会输出如下信息：
+
+2.连接MongoDB
+我们可以在命令窗口中运行 mongo.exe 命令即可连接上 MongoDB，执行如下命令：
+C:\mongodb\bin\mongo.exe
+
+3.配置 MongoDB 服务
+创建目录，执行下面的语句来创建数据库和日志文件的目录
+mkdir c:\data\db
+mkdir c:\data\log
+
+创建配置文件
+例如，创建一个配置文件位于 C:\mongodb\mongod.cfg，
+其中指定 systemLog.path 和 storage.dbPath。具体配置内容如下：
+
+systemLog:
+    destination: file
+    path: c:\data\log\mongod.log
+storage:
+    dbPath: c:\data\db
+
+
+4.安装 MongoDB服务
+通过执行mongod.exe，使用--install选项来安装服务，使用--config选项来指定之前创建的配置文件。
+
+ mongod --config "e:\mongodb\data\mongod.cfg" --install --serviceName "mongodb" --serviceDisplayName  "mongodb" 
+
+要使用备用 dbpath，可以在配置文件（例如：C:\mongodb\mongod.cfg）
+或命令行中通过 --dbpath 选项指定。
+如果需要，您可以安装 mongod.exe 或 mongos.exe 的多个实例的服务。
+只需要通过使用 --serviceName 和 --serviceDisplayName 指定不同的实例名。
+只有当存在足够的系统资源和系统的设计需要这么做。
+
+启动MongoDB服务
+net start MongoDB
+
+关闭MongoDB服务
+net stop MongoDB
+
+移除 MongoDB 服务
+C:\mongodb\bin\mongod.exe --remove
+
+命令行下运行 MongoDB 服务器 和 配置 MongoDB 服务 任选一个方式启动就可以。
+
+任选一个操作就好
+MongoDB 后台管理 Shell
+如果你需要进入MongoDB后台管理，你需要先打开mongodb装目录的下的bin目录，
+然后执行mongo.exe文件，MongoDB Shell是MongoDB自带的交互式Javascript shell,
+用来对MongoDB进行操作和管理的交互式环境。
+当你进入mongoDB后台后，它默认会链接到 test 文档（数据库）：
+
+5.> mongo
+MongoDB shell version: 3.0.6
+connecting to: test
+
+	
+6.初始化副本集
+       启动三台MongoDB服务后，开始把他们初始化为副本集。在想要设置成primary（主节点）的机器上运行客户端mongo。例如第1台机器上：
+
+6.1、启动客户端
+
+      ./mongo
+
+6.2、
+执行 rs.initiate()
+
+6.3、
+添加secondary节点
+例如将第2台机器设为secondary节点
+rs.add("192.168.1.2:27018");
+
+// 添加裁判节点服务器
+rs.addArb("192.168.1.2:27019")
+
+
+6.4、
+添加仲裁节点ARBITER
+
+将第三台机器设为仲裁节点
+
+rs.addArb("192.168.32.138:27017")
+
+查看集群情况可以使用命令：rs.status()
+
+6.5
+启动第二台机器的客户端，进入SECONDARY（副节点）
+
+默认情况下SECONDARY节点不能读写，要设置slaveOK为true才行。
+集群中只能有一个Primary节点，只能在Primary写数据，
+不能在SECONDARY写数据
+
+例如：
+db.getMongo().setSlaveOk()或rs.slaveOk()
+
+6.6
+故障切换测试
+副本集还有个很重要的功能就是故障切换，把主节点关闭，看看副本点是否能接替主节点进行工作。
+
+在第1台机器执行db.shutdownServer()
+
+// 创建用户 create user 
+
+rs:PRIMARY> use admin
+switched to db admin
+rs:PRIMARY> db.createUser({user:"root",pwd:"123456",roles:["root"]})；
+
+6.7. 登录查看 
+rs:PRIMARY> db.auth("root","123456") 
+
+7.备份与恢复bson文件
+
+7.1备份
+ mongodump -h localhost --port 27017 -o  e:\mongodb\dump
+ 
+7.2恢复
+mongorestore -h localhost --port 27017 -d  e:\mongodb\dump\admin
+
+// 备份
+--备份单个表
+mongodump -u  superuser -p 123456  --port 27017 --authenticationDatabase admin -d myTest -c d -o /backup/mongodb/myTest_d_bak_201507021701.bak
+
+--备份单个库
+mongodump  -u  superuser -p 123456 --port 27017  --authenticationDatabase admin -d myTest -o  /backup/mongodb/
+
+--备份所有库
+mongodump  -u  superuser -p 123456 --authenticationDatabase admin  --port 27017 -o /root/bak 
+
+--备份所有库推荐使用添加--oplog参数的命令，这样的备份是基于某一时间点的快照，只能用于备份全部库时才可用，单库和单表不适用：
+mongodump -h 127.0.0.1 --port 27017   --oplog -o  /root/bak 
+
+// 恢复
+--同时，恢复时也要加上--oplogReplay参数，具体命令如下(下面是恢复单库的命令)：
+mongorestore  -d swrd --oplogReplay  /home/mongo/swrdbak/swrd/
+
+--恢复单个库：
+mongorestore  -u  superuser -p 123456 --port 27017  --authenticationDatabase admin -d myTest   /backup/mongodb/
+
+--恢复所有库：
+mongorestore   -u  superuser -p 123456 --port 27017  --authenticationDatabase admin  /root/bak
+
+--恢复单表
+mongorestore -u  superuser -p 123456  --authenticationDatabase admin -d myTest -c d /backup/mongodb/myTest_d_bak_201507021701.bak/myTest/d.bson
+
+
+8.数据导入和导出
+
+8.1  数据导出
+mongoexport -d admin -c  users -o  e:\mongodb\export\user.json
+
+8.2  数据导入
+mongoimport -d admin -c  users --file  e:\mongodb\export\user.json
+
+
+
+
+//git保持本地仓库代码跟远程代码一致:
+git fetch --all && git reset --hard origin/master && git pull  

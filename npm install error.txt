@@ -1,0 +1,36 @@
+1,  下载仓库为淘宝镜像
+
+ 	安装：npm install -g cnpm --registry=https://registry.npm.taobao.org 安装淘宝镜像）用淘宝镜像快！
+
+　	修改：npm config set registry http://registry.npm.taobao.org/
+
+2, 如果要发布自己的镜像需要修改回来
+
+　npm config set registry https://registry.npmjs.org/
+
+
+1.首先确定自己使用的包的下载源是国内的（可以通过npm config list查看自己包的下载源，
+如果是默认官方的话，建议改成国内的，方法：npm config set registry https://registry.npm.taobao.org），
+不存在因为网络导致依赖包下载缓慢的安装失败问题，如果遇到安装一半卡住不动的小伙伴可以尝试一下这种方法。
+
+2.然后，使用npm cache clean --force清除缓存，并将安装失败的项目中的node_modules文件夹删除，重新npm install。
+
+3.再次，可能由于node版本或npm版本太老导致，那就升级版本。查看node和npm版本的命令分别为node -v、npm -v。
+一点要提到的是，如果更新node版本的话，那么连带npm版本也会一同更新了，所以如果你只是想更新npm版本，
+那么只需运行npm install npm -g就可以单独更新npm版本，而不需要更新node版本，
+这里注意npm要全局安装。如果要更新node版本的话，发现网上的很多方法有问题
+，linux平台的话可以尝试一下这种更新方式（首先清除cache，npm cache clean --force，
+然后安装n模块，该模块专门用来管理nodejs的版本，命令为npm install -g n，
+ 然后直接输入n stable更新到最新版本，若要更新到指定版本的话，那么就n 对应版本号
+，例如n 8.11.3即更新到8.11.3的版本），但是windows平台不支持n，网上说的换成nvm的方式试过了也没用
+。然后本人采用的更新方式如下（覆盖安装）：①在官网（https://nodejs.org/zh-cn/）上下载对应要更新版本的安装包；
+②使用命令行where node查看原来版本的node安装地址，然后再安装新版本时，将node安装到老版本所在的目录下即可。
+然后再尝试以上的解决办法。本来以为重新安装了node会导致之前安装的全局包这些丢失，
+结果覆盖安装后发现原来安装的全局包还都在，小惊喜~不用再重新下载那些包了。
+
+
+4.网上也有提到一种方法：使用npm cache clean --force清除缓存，然后将安装失败的项目中的node_modules文件夹以及package-lock.json文件删除
+（package-lock.json是在npm install安装时生成的一份文件，用以记录当前状态下实际安装的各个npm package的具体来源和版本号，
+如果没有这个文件的话，那么npm install将下载大版本下的最新的包，具体可参考：https://www.cnblogs.com/cangqinglang/p/8336754.html），
+然后再npm install。
+
