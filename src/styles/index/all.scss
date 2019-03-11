@@ -1,29 +1,7 @@
 
 @import "../../scss/common/var.scss";                           // variable    
 
-// @import "../../scss/common/normalize.scss";                  //  reset css style             
-
-//@import "../../scss/bs-scss-3/_bootstrap.scss";        // bootstrap 3.* scss
-
-//@import "../../scss/bs-scss-4/bootstrap.scss";        // bootstrap 4.* scss
-
-//@import "../../scss/common/mixin.scss";                          // 函数
- 
-//@import "../../scss/common/df-pc.scss";                            // pc端     default scss
-
-// @import "../../scss/common/vue-ui-scss/all.scss";        // vue-ui-scss
-
-@import "../../scss/element-scss/index.scss";        // element-ui-scss
-
-
-// @import "../../scss/common/component-scss/comp-all.scss";          //  默认-组件
-
- @import "../../scss/vue-ui-scss/all.scss";          // vue-组件
-
-
-// @import "../../common/vd.scss";                             // 验证   scss
-// 
-// @import "../../scss/common/h5File.scss";                           // h5文件上传
+@import "../../scss/bs-scss-3/_bootstrap.scss";        // bootstrap 3.* scss
 
 @import "./page-scss/all.scss";                 // 子页面scss集合 
 
