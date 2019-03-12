@@ -1,9 +1,11 @@
 
-@import "../../scss/common/var.scss";                           // variable    
+@import "../../scss/var.scss";                           // variable  
+  
+@import "../../scss/common/df-pc.scss";    					// defualt  pc scss
 
-@import "../../scss/bs-scss-3/_bootstrap.scss";        // bootstrap 3.* scss
+@import "../../scss/bs-scss-3/_bootstrap.scss";        			// bootstrap 3.* scss
 
-@import "./page-scss/all.scss";                 // 子页面scss集合 
+@import "./page-scss/all.scss";                 				// 子页面scss集合 
 
  
 

@@ -7,12 +7,12 @@
 
 /***中屏 width 768-991***/
 
-@media (min-width:768px) {}
+@media (min-width:768px ) and(max-width:991px)
 
 
 /*** 大屏width 992-1199 ***/
 
-@media (min-width:992px) {}
+@media (min-width:768px ) and(max-width:1199px)
 
 
 /*** 加大屏width 1200以上 ***/

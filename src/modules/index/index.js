@@ -1,10 +1,9 @@
 const index={
+	
 	init(){
-		alert("index");
+		console.log("index");
 	}
 }
-
-
 
 export{
 	index

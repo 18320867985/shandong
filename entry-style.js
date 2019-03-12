@@ -5,8 +5,6 @@ module.exports = {
 	// 模块列表
 	list: [
 		"index", // 默认主模块
-		"admin",
-		"test",
 	],
 
 	dir: "./src/styles/",   // 默认文件父级
