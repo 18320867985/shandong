@@ -39,7 +39,7 @@ body {
 }
 
 .container {
-  min-width: 300px;
+  min-width: 320px;
 }
 
 /*ie8*/
@@ -68,7 +68,7 @@ a,
 a:link,
 a:hover,
 a:active {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 ul {

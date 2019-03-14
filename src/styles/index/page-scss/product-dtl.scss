@@ -1,0 +1,298 @@
+
+
+/*产品中心*/
+
+.product-dtl{
+
+    .zm{
+        text-align: center;
+        width: 100%;
+    
+        span:nth-child(1){
+        width: 426px;
+        height: 26px;
+        font-family: Roboto-Regular;
+        font-size: 36px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #666666;
+        
+        }
+
+        span:nth-child(2){
+            font-family: Roboto-Regular;
+            font-size: 36px;
+            font-weight: normal;
+            letter-spacing: 0px;
+            color: #076ce0;
+            }
+    
+    }
+    .ttl{
+        margin-top: 50px;
+        
+        text-align: center;
+        color:#666;
+        font-family: MicrosoftYaHei;
+        font-size: 36px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+    
+    }
+
+}
+
+/*导航条*/
+.product-dtl-nav{
+    margin-left: 10px;
+    margin: 50px 0;
+    li{
+        float: left;
+        height: 13px;
+        font-family: MicrosoftYaHei;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #999999;
+        a{
+            color: #999999;
+            &:hover{
+                color:$text-primary;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*阴影部分*/
+.product-dtl-yy{
+    width: 100%;
+    height: 726px;
+    max-height: 726px;
+     position: relative;
+    background-size: contain;
+    background: url(/static/images/product-dtl/product-yy.png);
+}
+.product-dtl-yy-cont{
+    position: absolute;
+    right:50px;
+    top: 50px;
+    width: 480px;
+    height: 636px;
+    padding: 50px;
+    color:#fff;
+	background-color: #076ce0;
+	box-shadow: 0px 6px 12px 0px 
+		rgba(4, 32, 63, 0.56);
+    opacity: 0.9;
+    transition: .5s;
+    
+
+    &:hover{
+        transform: rotateY(10deg);
+    }
+    
+    h3{
+    width: 100%;
+    height: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+	font-family: MicrosoftYaHei;
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+    }
+
+    p{
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+         line-height: 24px;
+    }
+
+    ul{
+        margin-top: 50px;
+         li{
+            padding: 20px 0;
+             border-bottom: 1px solid #4590e5;
+             &+li{
+               
+             }
+         }
+    }
+}
+
+
+/***小屏 width 0-576 ***/
+@media (max-width:576px) {
+
+    .product-dtl-nav {
+        margin-left: 10px;
+        margin: 20px 0;
+        li{
+            float: none;
+             margin-bottom: 10px;
+        }
+    }
+    .product-dtl-yy{
+        text-align: center;
+         padding: 50px 0;
+    }
+    .product-dtl-yy-cont{
+    position: static;
+    display:   inline-block;
+    float: none;
+
+    width: 90%;
+    height: auto;
+    padding: 50px;
+    color:#fff;
+	background-color: #076ce0;
+	box-shadow: 0px 6px 12px 0px 
+		rgba(4, 32, 63, 0.56);
+    opacity: 0.9;
+    transition: .5s;
+    
+    }
+}
+
+
+
+
+/*概述部分*/
+.product-dtl-desc{
+     margin-top: 120px;
+       
+
+        .product-dtl-desc-1{
+         
+            margin-top: 50px;
+                height: 280px;
+                ._item-1{
+                    height: 280px;
+                    padding: 50px;
+                    font-size: 16px;
+                    background-color: #126fdc;
+                    color:#fff;
+                    p{
+                        width: 100%;
+                    }
+                }
+
+                ._item-2{
+                    position: relative;
+                      overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        max-height: 280px;
+                        transition: .8s;
+                    }
+
+                    &:hover{
+                        .mask{
+                            top: 0;
+                            left: 0;
+                            background: rgba(#333,0.5);
+                        }
+                    }
+                    .mask{
+                        transition: .5s;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: -100%;
+                       
+                         background: rgba(#333,0);
+                    }
+    
+                }
+              
+            
+        }
+
+}
+
+
+/*表格 table*/
+.product-dtl-tb{
+    margin-top: 120px;
+      
+    .table{
+         margin-top: 50px;
+         tr {
+          
+            th{
+                 padding: 30px 5px;
+                 color:#fff;
+                 font-size: 17px;
+                 font-weight: normal;
+	            font-stretch: normal;
+                 text-align: center;
+                 background-color: #126fdc;
+            }
+
+            td{
+                 padding: 30px  5px;
+                  text-align: center;
+                  font-family: MicrosoftYaHei;
+                  font-size: 16px;
+                  font-weight: normal;
+                  font-stretch: normal;
+                  letter-spacing: 0px;
+                  color: #333333;
+             
+            }
+
+         }
+    }
+     
+}
+
+/*注意事项*/
+.product-dtl-warn{
+
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+.product-dtl-warn-cont{
+    margin-top: 50px;
+    >div{
+    text-align: center;
+    }
+
+    ._item{
+        width: 160px;
+        display: inline-block;
+        float: none;
+        &:hover{
+            img{
+                transform: rotate(360deg);
+            }
+        }
+      
+        img{
+           
+            width: 100%;
+            height: 160px;
+             margin-bottom: 20px;
+             transition: .5s;
+            
+        }
+
+        p{
+            font-family: MicrosoftYaHei;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+            color: #333333;
+            text-align: center;
+        }
+    }
+}

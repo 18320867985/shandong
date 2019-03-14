@@ -9,10 +9,14 @@ var rename = require("gulp-rename"); // npm install gulp-rename --save-dev  重�
 var concat = require('gulp-concat'); //npm install gulp-concat --save-dev  整合文件
 var minHtml = require('gulp-htmlmin'); //npm install gulp-htmlmin --save-dev 压缩html，可以压缩页面javascript、css，去除页面空格、注释，删除多余属性等操作
 
-var vue = require('rollup-plugin-vue2');
-var css = require('rollup-plugin-css-only');
-var scss = require('rollup-plugin-scss');
-var postcss = require('rollup-plugin-postcss');
+var vue = require('rollup-plugin-vue');
+var vembedCss = require('rollup-plugin-embed-css');
+
+
+//var css = require('rollup-plugin-css-only');
+// var scss = require('rollup-plugin-scss');
+// var postcss = require('rollup-plugin-postcss');
+
 var replace = require('rollup-plugin-replace');
 var rollup = require('rollup');
 var babel = require('rollup-plugin-babel');
@@ -275,11 +279,7 @@ function rollupBuild(isBuild, name, dir) {
 
 		plugins: [
 			vue(),
-			//css(),
-			scss({
-				output: './src/static/css/vue-' + name.trim() + ".css"
-			}),
-
+			vembedCss(),
 			/*commonjs 转换 es6*/
 			resolve(),
 			commonjs(),
