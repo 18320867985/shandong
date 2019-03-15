@@ -70,9 +70,18 @@
         &+._item{
             margin-top: 20px;
         }
+
+        
+        &:hover{
+           img{
+            transform: rotateY(180deg);
+           } 
+        }
         img{
             display: inline-block;
             float: none;
+            transition: .5s;
+
         }
 
         p{

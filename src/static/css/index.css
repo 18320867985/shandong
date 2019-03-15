@@ -6307,6 +6307,7 @@ body {
 .index-cont-swiper .carousel-control .glyphicon {
   position: absolute;
   top: 50%;
+  left: 50%;
   font-size: 24px;
   margin: -12px; }
 
@@ -6453,7 +6454,6 @@ body {
   .index-cont-prod .box {
     width: 1200px;
     margin-top: 59px;
-    background: transparent;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6467,7 +6467,6 @@ body {
     justify-items: center;
     /*item-4*/ }
     .index-cont-prod .box .box-item {
-      float: left;
       width: 230px;
       -webkit-transition: 1s;
       transition: 1s; }
@@ -6518,7 +6517,6 @@ body {
           height: 239px;
           width: 100%; }
     .index-cont-prod .box .box-item:nth-child(4) {
-      float: left;
       width: 470px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
@@ -6597,7 +6595,12 @@ body {
       width: 100%;
       max-width: 100%;
       max-height: 320px;
-      background-color: #786b62; }
+      background-color: #786b62;
+      -webkit-transition: .8s;
+      transition: .8s; }
+      .index-cont-news .thumbnail img:hover {
+        -webkit-transform: scale(1.05);
+                transform: scale(1.05); }
     .index-cont-news .thumbnail a {
       text-decoration: none; }
     .index-cont-news .thumbnail a:hover {
@@ -6613,7 +6616,12 @@ body {
   .index-cont-news .media .media-object {
     width: 124px;
     height: 124px;
-    background-color: #786b62; }
+    background-color: #786b62;
+    -webkit-transition: .8s;
+    transition: .8s; }
+    .index-cont-news .media .media-object:hover {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1); }
   .index-cont-news .media .media-heading {
     max-width: 300px;
     margin-bottom: 0px;
@@ -6913,7 +6921,6 @@ body {
     justify-items: center;
     /*item-4*/ }
     .index-cont-prod .box .box-item:nth-child(4) {
-      float: left;
       width: 90%;
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
@@ -6973,7 +6980,6 @@ body {
     justify-items: center;
     /*item-4*/ }
     .index-cont-prod .box .box-item {
-      float: left;
       width: 230px;
       -webkit-transition: 1s;
       transition: 1s; }
@@ -7629,9 +7635,14 @@ body {
     text-align: center; }
     .contact-ttl-icons ._item + ._item {
       margin-top: 20px; }
+    .contact-ttl-icons ._item:hover img {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
     .contact-ttl-icons ._item img {
       display: inline-block;
-      float: none; }
+      float: none;
+      -webkit-transition: .5s;
+      transition: .5s; }
     .contact-ttl-icons ._item p {
       text-align: center;
       width: 100%;
