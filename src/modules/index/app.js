@@ -1,4 +1,8 @@
 import   "../../libs/autoRun.js";   // must   import
 
-export {index} from "./index"
+import   "../../libs/common.js";  
+
+export {index} from "./index";
+
+export {news} from "./news";
 

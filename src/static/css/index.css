@@ -7336,7 +7336,7 @@ body {
     text-align: center;
     width: 272px;
     height: 272px;
-    border: 1px  solid #ddd; }
+    border: 1px solid #ddd; }
     .product-list-imgs ._item img {
       display: inline-block;
       float: none;
@@ -7444,8 +7444,8 @@ body {
   -webkit-box-shadow: 0px 6px 12px 0px rgba(4, 32, 63, 0.56);
           box-shadow: 0px 6px 12px 0px rgba(4, 32, 63, 0.56);
   opacity: 0.9;
-  -webkit-transition: .5s;
-  transition: .5s; }
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
   .product-dtl-yy-cont:hover {
     -webkit-transform: rotateY(10deg);
             transform: rotateY(10deg); }
@@ -7493,8 +7493,8 @@ body {
     -webkit-box-shadow: 0px 6px 12px 0px rgba(4, 32, 63, 0.56);
             box-shadow: 0px 6px 12px 0px rgba(4, 32, 63, 0.56);
     opacity: 0.9;
-    -webkit-transition: .5s;
-    transition: .5s; } }
+    -webkit-transition: 0.5s;
+    transition: 0.5s; } }
 
 /*概述部分*/
 .product-dtl-desc {
@@ -7517,15 +7517,15 @@ body {
         width: 100%;
         height: 100%;
         max-height: 280px;
-        -webkit-transition: .8s;
-        transition: .8s; }
+        -webkit-transition: 0.8s;
+        transition: 0.8s; }
       .product-dtl-desc .product-dtl-desc-1 ._item-2:hover .mask {
         top: 0;
         left: 0;
         background: rgba(51, 51, 51, 0.5); }
       .product-dtl-desc .product-dtl-desc-1 ._item-2 .mask {
-        -webkit-transition: .5s;
-        transition: .5s;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -7547,7 +7547,7 @@ body {
       text-align: center;
       background-color: #126fdc; }
     .product-dtl-tb .table tr td {
-      padding: 30px  5px;
+      padding: 30px 5px;
       text-align: center;
       font-family: MicrosoftYaHei;
       font-size: 16px;
@@ -7576,8 +7576,8 @@ body {
       width: 100%;
       height: 160px;
       margin-bottom: 20px;
-      -webkit-transition: .5s;
-      transition: .5s; }
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
     .product-dtl-warn-cont ._item p {
       font-family: MicrosoftYaHei;
       font-size: 16px;
@@ -7969,3 +7969,201 @@ body {
           max-height: 100%;
           -webkit-transition: .8s;
           transition: .8s; } }
+
+/*企业新闻*/
+.news-banner {
+  position: relative;
+  width: 100%; }
+  .news-banner img {
+    width: 100%;
+    min-height: 180px;
+    max-height: 600px; }
+
+.news-banner-toggle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%; }
+  .news-banner-toggle ._item {
+    height: 96px;
+    text-align: center;
+    background-color: #919599;
+    opacity: 0.9;
+    cursor: pointer;
+    -webkit-transition: .5s;
+    transition: .5s;
+    /***小屏 width 0-767 ***/
+    /***中屏 width 768-991***/
+    /*** 大屏width 992-1199 ***/
+    /*** 加大屏width 1200以上 ***/ }
+    .news-banner-toggle ._item.active {
+      background-color: #1974dc; }
+    .news-banner-toggle ._item p {
+      margin-top: 18px;
+      font-family: MicrosoftYaHei;
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #ffffff; }
+      .news-banner-toggle ._item p:nth-child(2) {
+        font-size: 20px;
+        line-height: 20px; }
+    @media (max-width: 767px) {
+      .news-banner-toggle ._item {
+        height: 50px; } }
+    @media (min-width: 768px) {
+      .news-banner-toggle ._item {
+        height: 70px; }
+        .news-banner-toggle ._item p {
+          margin-top: 12px;
+          font-family: MicrosoftYaHei;
+          font-size: 18px;
+          line-height: 18px;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0px;
+          color: #ffffff; }
+          .news-banner-toggle ._item p:nth-child(2) {
+            font-size: 18px;
+            line-height: 18px; } }
+    @media (min-width: 992px) {
+      .news-banner-toggle ._item {
+        height: 96px; }
+        .news-banner-toggle ._item p {
+          margin-top: 18px;
+          font-family: MicrosoftYaHei;
+          font-size: 24px;
+          line-height: 24px; }
+          .news-banner-toggle ._item p:nth-child(2) {
+            font-size: 20px;
+            line-height: 20px; } }
+
+/*news-list*/
+.news-list {
+  margin-top: 120px;
+  margin-bottom: 50px; }
+  .news-list .news-list-item {
+    display: none;
+    -webkit-transition: .6s;
+    transition: .6s; }
+    .news-list .news-list-item.active {
+      display: block; }
+
+.news-list-a-items {
+  /***小屏 width 0-767 ***/ }
+  .news-list-a-items ._item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    justify-items: center;
+    height: 206px;
+    background-color: #f0f2f5; }
+    .news-list-a-items ._item + ._item {
+      margin-top: 20px; }
+  .news-list-a-items ._item-l {
+    height: 206px;
+    width: 126px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .news-list-a-items ._item-l p {
+      font-family: Roboto-Regular;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #333333; }
+    .news-list-a-items ._item-l p:nth-child(1) {
+      font-size: 54px; }
+    .news-list-a-items ._item-l p:nth-child(2) {
+      font-size: 16px; }
+    .news-list-a-items ._item-l p:nth-child(3) {
+      font-size: 16px; }
+  .news-list-a-items ._item-m {
+    width: 310px; }
+  .news-list-a-items ._item-r {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 20px 34px;
+    max-width: 100%;
+    background-color: #f0f2f5;
+    -webkit-box-shadow: 2px 2px 5px  #f0f2f5;
+            box-shadow: 2px 2px 5px  #f0f2f5; }
+    .news-list-a-items ._item-r h3 {
+      margin: 20px 0;
+      width: 239px;
+      height: 22px;
+      font-family: MicrosoftYaHei;
+      font-size: 20px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #333333; }
+    .news-list-a-items ._item-r > div {
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .news-list-a-items ._item-r a {
+      display: block;
+      margin-top: 20px;
+      text-align: right; }
+  @media (max-width: 767px) {
+    .news-list-a-items ._item-r {
+      width: 100%;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      padding: 20px 34px;
+      max-width: 100%;
+      background-color: #f0f2f5;
+      -webkit-box-shadow: 2px 2px 5px  #f0f2f5;
+              box-shadow: 2px 2px 5px  #f0f2f5; }
+      .news-list-a-items ._item-r h3 {
+        margin: 20px 0;
+        width: 239px;
+        height: 22px;
+        font-family: MicrosoftYaHei;
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #333333; }
+      .news-list-a-items ._item-r > div {
+        height: 73px;
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #999999;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .news-list-a-items ._item-r a {
+        display: block;
+        margin-top: 20px;
+        text-align: right; } }

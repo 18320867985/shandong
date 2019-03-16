@@ -1,97 +1,78 @@
-
-
 /*产品中心*/
 
-.product{
+.product {}
 
-}
-
-.product-banner{
-
+.product-banner {
     width: 100%;
-    img{
+    img {
         width: 100%;
         min-height: 150px;
         max-height: 300px;
     }
 }
 
-.product-list-ttl{
+.product-list-ttl {
     margin-top: 120px;
-    .zm{
+    .zm {
         text-align: center;
         width: 100%;
-
-        span:nth-child(1){
-        width: 426px;
-        height: 26px;
-        font-family: Roboto-Regular;
-        font-size: 36px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #666666;
-        
+        span:nth-child(1) {
+            width: 426px;
+            height: 26px;
+            font-family: Roboto-Regular;
+            font-size: 36px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+            color: #666666;
         }
-
-        span:nth-child(2){
+        span:nth-child(2) {
             font-family: Roboto-Regular;
             font-size: 36px;
             font-weight: normal;
             letter-spacing: 0px;
             color: #076ce0;
-            }
-
-        
+        }
     }
-
-    .ttl{
+    .ttl {
         margin-top: 50px;
         text-align: center;
-        color:#666;
+        color: #666;
         font-family: MicrosoftYaHei;
         font-size: 36px;
         font-weight: normal;
         font-stretch: normal;
         letter-spacing: 0px;
-
     }
 }
 
-.product-list-imgs{
-    margin-top:50px;
+.product-list-imgs {
+    margin-top: 50px;
     text-align: center;
-
-    a{ text-decoration:none;}
-
-    ._item{
+    a {
+        text-decoration: none;
+    }
+    ._item {
         display: inline-block;
         box-sizing: border-box;
         text-align: center;
-         width: 272px;
-         height: 272px;
-         border: 1px  solid #ddd;
-
-         img{
+        width: 272px;
+        height: 272px;
+        border: 1px solid #ddd;
+        img {
             display: inline-block;
             float: none;
             width: 100%;
             min-height: 100px;
             height: 100%;
             transition: .5s;
-
-            &:hover{
-                box-shadow: 2px 2px 5px #999, -2px -2px 5px #999;
-                // transform: rotateY(180deg);
+            &:hover {
+                box-shadow: 2px 2px 5px #999, -2px -2px 5px #999; // transform: rotateY(180deg);
                 //border: 1px solid red;
             }
-    
         }
-
-         
-        
     }
-    p{
+    p {
         margin-top: 20px;
         margin-bottom: 50px;
         font-family: MicrosoftYaHei;
@@ -100,45 +81,31 @@
         font-stretch: normal;
         letter-spacing: 0px;
         color: #333333;
-         text-align: left;
+        text-align: left;
     }
-
-
-     /***小屏 width 0-767 ***/
-        @media (max-width:767px) {
-            ._item a{
-                display: block;
-                width: 90%;
-                height: auto;
-       
-              }
-              p{
-                text-align: center;
-              }
-
-
+    /***小屏 width 0-767 ***/
+    @media (max-width:767px) {
+        ._item a {
+            display: block;
+            width: 90%;
+            height: auto;
         }
-
-
-        /***中屏 width 768-991***/
-        @media (min-width:768px ) and(max-width:991px){
-            ._item{
-                width: 200px;
-                height: 200px;
-       
-              }
+        p {
+            text-align: center;
         }
-
-
-        /*** 大屏width 992-1199 ***/
-        @media (min-width:992px ) and(max-width:1199px){
-            ._item{
-                width: 200px;
-                height: 200px;
-       
-              }
+    }
+    /***中屏 width 768-991***/
+    @media (min-width:768px) and(max-width:991px) {
+        ._item {
+            width: 200px;
+            height: 200px;
         }
-       
-
-  
+    }
+    /*** 大屏width 992-1199 ***/
+    @media (min-width:992px) and(max-width:1199px) {
+        ._item {
+            width: 200px;
+            height: 200px;
+        }
+    }
 }
