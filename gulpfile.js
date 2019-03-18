@@ -36,7 +36,7 @@ var appScss = require("./entry-style.js"); // scss 打包入口
 var paths = {
 	stylePath: ['./src/styles/**/*.scss','./src/scss/**/*.scss'],
 	htmlPath: ['./src/**/*.html'],
-	jspath: ['./src/modules/**/*.*','./src/components/**/*.*'],
+	jspath: ['./src/modules/**/*.*','./src/components/**/*.*','./src/libs/**/*.*'],
 }
 
 

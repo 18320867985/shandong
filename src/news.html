@@ -26,73 +26,8 @@
 
 <body class="index">
 
-	<!--top start-->
-	<header class="index-head">
-
-		<!--导航条-->
-		<nav class="navbar navbar-default navbar-fixed-top rd-no2">
-			<div class="container">
-				<div class="row">
-
-					<!-- 导航 图标 -->
-					<div class="navbar-header navbar-left">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<!--连接logo-->
-						<a class="navbar-brand  hidden-xs" href="#">
-							<img src="./static/images/logo.png" alt="logo">
-						</a>
-						<!--小屏logo-->
-						<a class="navbar-brand navbar-brand-xs  visible-xs" href="#">
-							<img src="./static/images/logo-xs.png" alt="logo">
-							<span>山东菏泽柏罡化工有限公司</span>
-						</a>
-					</div>
-
-					<!-- navbar-collapse -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav  navbar-right">
-							<li>
-								<a href="javascript:;">
-									首页
-								</a>
-							</li>
-							<li>
-								<a href="javascript:;">
-									产品展示
-								</a>
-							</li>
-
-							<li>
-								<a href="javascript:;">
-									企业介绍
-								</a>
-							</li>
-
-							<li  class="active">
-								<a href="javascript:;">
-									新闻资讯
-								</a>
-							</li>
-							<li>
-								<a href="javascript:;">
-									联系我们
-								</a>
-							</li>
-
-						</ul>
-
-					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-->
-			</div>
-		</nav>
-
-	</header>
+	<!--top start 页头-->
+	<include  src="./header.html" header  index="3"></include>
 	<!--top end-->
 
 	<!--content start-->
@@ -145,7 +80,7 @@
 									<a href="javascript:;">查看全文></a>
 								</div>
 							</div>
-							<div class="_item">
+							<div class="_item clearfix">
 								<div class="_item-l">
 									<p>07</p>
 									<p>3</p>
@@ -185,31 +120,12 @@
 									<a href="javascript:;">查看全文></a>
 								</div>
 							</div>
-							<div class="_item">
-								<div class="_item-l">
-									<p>07</p>
-									<p>3</p>
-									<p>2019</p>
-								</div>
-								<div class="_item-m">
-									<img src="./static/images/news/news-img.png" alt="news item image">
-								</div>
-								<div class="_item-r">
-									<h3 class="ellipsis">山东化工专项行动成绩斐然山东化工专项行动成绩斐然山东化工专项行动成绩斐然山东化工专项行动成绩斐然山东化工专项行动成绩斐然
-									</h3>
-									<div>近日，从山东省化工专项行动办公室传出消息，2018年前11个月，
-										全省规模以上化工企业实现主营业务收入24342亿元、利润总额1273亿元，
-										同比分别增长14.05%、12.92%，继续保持全国领先,从山东省化工专项行动办公室传出消息.2018年前11个月，
-										全省规模以上化工企业实现主营...
-									</div>
-									<a href="javascript:;">查看全文></a>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 
 					<!--tab-b-->
-					<div class="news-list-item active"  id="news_b">
+					<div class="news-list-item "  id="news_b">
 							<div class="news-list-a-items">
 								<div class="_item clearfix">
 									<div class="_item-l">
@@ -231,7 +147,7 @@
 										<a href="javascript:;">查看全文></a>
 									</div>
 								</div>
-								<div class="_item">
+								<div class="_item clearfix">
 									<div class="_item-l">
 										<p>08</p>
 										<p>3</p>
@@ -292,64 +208,8 @@
 	<!--content end-->
 
 	<!--bottom start-->
-	<footer class="index-footer">
-		<div class="container">
-			<div class="row">
-				<div class="index-footer-cont">
-
-					<!--导航链接-->
-					<ul class="index-footer-nav  text-center  clearfix">
-						<li>
-							<a href="javascript:;">首页</a>
-						</li>
-						<li>
-							<a href="javascript:;">产品展示</a>
-						</li>
-						<li>
-							<a href="javascript:;">企业介绍</a>
-						</li>
-						<li>
-							<a href="javascript:;">新闻资讯</a>
-						</li>
-						<li>
-							<a href="javascript:;">关于我们</a>
-						</li>
-					</ul>
-
-					<!--友情链接：-->
-					<ul class="index-footer-link">
-						<li>友情链接：</li>
-						<li>
-							<a href="javascript:;"><img src="./static/images//logo-min-1.png" alt=""></a>
-						</li>
-						<li>
-							<a href="javascript:;"><img src="./static/images//logo-min-2.png" alt=""></a>
-						</li>
-						<li>
-							<a href="javascript:;"><img src="./static/images//logo-min-3.png" alt=""></a>
-						</li>
-
-					</ul>
-
-					<!--联系地址-->
-					<div class="index-footer-addr clearfix">
-
-						<div class="_phone col-xs-12 col-sm-6">
-							<span class="glyphicon glyphicon-earphone"></span>
-							<span class="_num">0530-3135198</span>
-						</div>
-						<div class="_addr col-xs-12 col-sm-6">
-							<p class="text-right">山东菏泽柏罡化工有限公司</p>
-							<p class="text-right">ADD：东明黄河路北段</p>
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-		</div>
-
-	</footer>
+		<!--页脚-->
+		<include  src="./footer.html"></include>
 	<!--bottom end-->
 
 	<div class="scroll-top"><span class="iconfont icon-dingbu"></span></div>
