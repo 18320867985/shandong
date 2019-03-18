@@ -7,6 +7,7 @@ const news={
 
 			// tab toggle
 			$(".news-banner-toggle ._item").click(function(e){
+		
 				var p=$(this).parents(".news-banner-toggle");
 				$("._item",p).removeClass("active");
 				$(this).addClass("active");

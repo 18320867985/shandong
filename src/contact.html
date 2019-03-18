@@ -83,35 +83,39 @@
 				<div class="container">
 					<div class="row clearfix">
 							<div class="contact-map-l col-xs-12 col-sm-12 col-md-6">
-									<div class="contact-map-l-link" id="bd_map"> 
+									<div class="contact-map-l-link" id="bd_map"  style="height: 420px;"> 
 										
 										<!-- <img class="img-responsive" src="./static/images/contact/cu-map@2x.png" alt=""> -->
 									</div>
 				
 							</div>
 							<div  class="contact-map-r col-xs-12 col-sm-12 col-md-6">
-									<form >
+									<form class="form1" >
 
-										<div class="form-group">
+										<div class="form-group vd-box">
 												<label for="name">姓名</label>
-												<input class="form-input  form-control" type="text" name="" id="name" placeholder="输入姓名">
+												<input class="form-input  form-control vd-item" vd-req  vd-req-msg="姓名不能为空"  name="name" type="text"  id="name" placeholder="输入姓名">
+												
 										</div>
-										<div class="form-group">
+											
+										<div class="form-group vd-box">
 												<label for="phone">电话</label>
-												<input  class="form-input form-control" type="text" name="phone" id="" placeholder="输入电话">
+												<input  class="form-input form-control vd-item" vd-req  vd-req-msg="电话不能为空"
+												vd-pattern="^1\d{10}$" vd-pattern-msg="手机格式不对" maxlength="11"
+												  type="text" name="phone" id="phone" placeholder="输入电话">
 
 										</div>
-										<div class="form-group">
+										<div class="form-group vd-box">
 												<label for="content">内容</label>
-												 <textarea name="" class="form-input form-control"  id="content"   placeholder="输入内容"></textarea>
+												 <textarea name=" content" class="form-input form-control vd-item" vd-req  vd-req-msg="内容不能为空"   id="content"   placeholder="输入内容"></textarea>
 										</div>
 										<div class="form-group btn-form-group text-center">
 											<label for="content"></label>
-											<button class="btn-save" type="button">提交</button>
+											<button class="btn-save vd-btn" type="button">提交</button>
 										</div>
 
 									</form>
-				
+									
 							</div>
 					</div>
 				</div>
@@ -132,14 +136,14 @@
 	<div class="scroll-top"><span class="iconfont icon-dingbu"></span></div>
 
 
-	<script src="./static/js/config.js" type="text/javascript" charset="utf-8"></script>
-	<script src="./static/js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="./static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="./static/js/jquery.touchSwipe.min.js" type="text/javascript" charset="utf-8"></script>
-	<script data-parent="umd" data-umd="index" defer src="./static/js/index.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CeGtXiqmTNfTiGWW0qO4XqCt"></script>
-	<script src="./static/js/bd-map.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./static/js/config.js"  type="text/javascript" charset="utf-8"></script>
+	<script src="./static/js/jquery-1.11.0.min.js"  type="text/javascript" charset="utf-8"></script>
+	<script src="./static/js/bootstrap.min.js"  type="text/javascript" charset="utf-8"></script>
+	<script src="./static/js/jquery.touchSwipe.min.js"  type="text/javascript" charset="utf-8"></script>
+	<script data-parent="umd" data-umd="news"  src="./static/js/index.js" type="text/javascript"charset="utf-8"></script>
+	<script type="text/javascript"  src="http://api.map.baidu.com/api?v=2.0&ak=CeGtXiqmTNfTiGWW0qO4XqCt"></script>
+	<script src="./static/js/bd-map.js"  type="text/javascript" charset="utf-8"></script>
+	
 	<!--[if lte IE 8]>
 			<script src="./static/js/respond.min.js" type="text/javascript" charset="utf-8"></script>
 			<script src="./static/js/ie8.js" type="text/javascript" charset="utf-8"></script>
@@ -149,13 +153,55 @@
 			$(function() {
 
 			// 百度地图
-			var _l = 115.135063;
-			var _r = 35.302022;
-			var _gsname = "山东菏泽柏罡化工有限公司";
-			var _gsaddr = "山东省荷泽市东明县黄河路北段";
-			bd_map.init("bd_map",_l, _r, _gsname, _gsaddr);
+				var _l = 115.135063;
+				var _r = 35.302022;
+				var _gsname = "山东菏泽柏罡化工有限公司";
+				var _gsaddr = "山东省荷泽市东明县黄河路北段";
+				bd_map.init("bd_map",_l, _r, _gsname, _gsaddr);
+				
+				//提交数据验证码
+				// 初始化验证对象
+				var vd1 = vd.create(".form1");
+				vd1.init();
+				//vd1.reset();  //重设表单并清空所以内容和检测验证
+				
+				// 检查验证没有显示样式=>vd1.check()||检查验证=>vd1.check(el) 验证当前项; 
+				// 验证并显示样式=>vd1.validate(); 
+				 
+				// 点击提交验证
+				$(".vd-btn").on("click", function() {
+					_submmit();
+					
+				});
+				
+				$("body,html").on("keydown",function(e){
+					console.log(e)
+				});
+				
+				function _submmit(){
+					// 是否验证成功
+					vd1.isSuccess(function(obj) {
+						setTimeout(function(){
+							vd1.reset();
+							alert(JSON.stringify(obj));
+								
+						},3000);
+						
+					}, function(obj) {
+								
+						obj.el.focus();
+						alert(obj.errorMsg)
+						
+					});
+				}
+				
+				
+				
 
 			});
+			
+			
+			
 		</script>
 
 </body>

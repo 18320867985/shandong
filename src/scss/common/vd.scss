@@ -2,8 +2,6 @@
 $vd-ok-color:darken( $text-success,15%);
 $vd-error-color: darken( red,10%);
 
-@import "var.scss";
-
 /*错误显示*/
 .vd-box .vd-req,
 .vd-box .vd-pattern,

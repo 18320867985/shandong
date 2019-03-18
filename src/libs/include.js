@@ -227,9 +227,9 @@
 (function() {
 
 	if(window.addEventListener) {
-		window.addEventListener("load", function() {
+	//	window.addEventListener("load", function() {
 			includeHtml();
-		});
+		//});
 	} else {
 		window.onload = function() {
 			includeHtml();
@@ -267,7 +267,7 @@
 					if(isHead){
 						 if(!isNaN(index)){
 							 index=window.parseInt(index);
-							console.log(index);
+							//console.log(index);
 							$("header .nav li").removeClass("active");
 							$("header .nav li").eq(index).addClass("active");
 						 }

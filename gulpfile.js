@@ -51,7 +51,7 @@ gulp.task('del', function (cd) {
 gulp.task('release', ["build-scss", "build"], function () {
 
 	gulp.src(['./src/**/*.html'])
-		.pipe(minHtml({ collapseWhitespace: true }))  // 压缩html
+		//.pipe(minHtml({ collapseWhitespace: true }))  // 压缩html
 		.pipe(gulp.dest('./dist/'));                  //复制html
 
 	gulp.src('./src/static/css/**/*.*')
