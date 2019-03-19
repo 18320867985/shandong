@@ -27,13 +27,14 @@ body {
 
   .collapse.navbar-collapse {
     /*navbar*/
-    .nav.navbar-nav {
+    .nav.navbar-nav ,.nav{
       li {
         width: 120px;
 
         line-height: 52px;
         //margin-right: 24px;
         text-align: center;
+				color: $text-primary;
 
         a {
           display: block;

@@ -263,20 +263,14 @@
 				isShowNumber = false;
 				isShowFirstLast = false;
 				isShowPrevNextGroup = false;
-				isShowSkip = false;
-
+		
 			} else {
 				isShowNumber = true;
 				isShowFirstLast = true;
 				isShowPrevNextGroup = true;
-				isShowSkip = true;
-
+				
 			}
 		}
-
-		$(window).resize(function () {
-			pg();
-		});
 
 
 		// 分页
@@ -288,7 +282,7 @@
 			showCount: 5, //  显示的页码数目
 			selector: ".paging", //分页父元素
 			isAnimation: true, //是否显示动画
-			isShowSkip: isShowSkip, // 是否显示跳转页
+			isShowSkip: true, // 是否显示跳转页
 			//prevText: "&lt;&lt;",
 			//nextText: "&gt;&gt;",
 			isShowNumber: isShowNumber,   //是否显示数字

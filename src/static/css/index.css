@@ -6440,11 +6440,12 @@ body {
       height: 52px; }
   .index-head .collapse.navbar-collapse {
     /*navbar*/ }
-    .index-head .collapse.navbar-collapse .nav.navbar-nav li {
+    .index-head .collapse.navbar-collapse .nav.navbar-nav li, .index-head .collapse.navbar-collapse .nav li {
       width: 120px;
       line-height: 52px;
-      text-align: center; }
-      .index-head .collapse.navbar-collapse .nav.navbar-nav li a {
+      text-align: center;
+      color: #076ce0; }
+      .index-head .collapse.navbar-collapse .nav.navbar-nav li a, .index-head .collapse.navbar-collapse .nav li a {
         display: block;
         width: 100%;
         height: 100%;
@@ -6452,7 +6453,7 @@ body {
         text-align: center;
         color: #076ce0;
         font-weight: normal; }
-      .index-head .collapse.navbar-collapse .nav.navbar-nav li.active a {
+      .index-head .collapse.navbar-collapse .nav.navbar-nav li.active a, .index-head .collapse.navbar-collapse .nav li.active a {
         color: #fff;
         background: #076ce0;
         border-radius: 4px; }
