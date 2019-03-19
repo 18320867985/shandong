@@ -18,7 +18,8 @@ $ping-rd:0;
 $count-item-color:#666;
 
 
-.paging .item {
+.paging .item,.paging >input{
+    display: inline-block;
     padding: 5px 8px;
     border: 1px solid #ddd;
     border-radius: $ping-rd;

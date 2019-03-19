@@ -6320,7 +6320,8 @@ button.close {
   padding: 10px;
   margin: 15px; }
 
-.paging .item {
+.paging .item, .paging > input {
+  display: inline-block;
   padding: 5px 8px;
   border: 1px solid #ddd;
   border-radius: 0;
@@ -7658,6 +7659,9 @@ body {
       width: 200px;
       height: 200px; } }
 
+.product-paging {
+  margin-bottom: 50px; }
+
 /*产品中心*/
 .product-dtl .zm {
   text-align: center;
@@ -8532,7 +8536,7 @@ body {
 
 /* news-paging */
 .news-paging {
-  margin-top: 50px; }
+  margin-top: 100px; }
 
 /*ie 6,7,8*/
 @media (max-width: 767px) {
