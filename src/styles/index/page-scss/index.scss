@@ -934,6 +934,124 @@ body {
       }
     }
   }
+
+  /*页脚*/
+  .index-footer {
+    min-height: 250px;
+  }
+
+  .index-footer-cont {
+    padding-top: 40px;
+  }
+
+  .index-footer-nav {
+    li {
+      display: inline-block;
+      float: none;
+      height: 30px;
+      line-height: 30px;
+      & + li {
+        margin-left: 20px;
+      }
+  
+      a {
+        display: block;
+        width: 80px;
+  
+        height: 17px;
+        text-decoration: none;
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #ffffff;
+        a:hover {
+          color: #f8f8f8;
+        }
+      }
+    }
+  }
+
+  .index-footer-link {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    li {
+      display: inline-block;
+      float: none;
+      margin-bottom: 20px;
+  
+      & + li {
+        margin-left: 20px;
+      }
+  
+      img {
+        width: 120px;
+          
+        height: 50px;
+      }
+    }
+    li:nth-child(1) {
+      width: 90px;
+      height: 50px;
+      line-height: 50px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #ffffff;
+    }
+  }
+  .index-footer-addr {
+    margin-bottom: 30px;
+    ._phone {
+      color: #fff;
+      &:hover {
+        .glyphicon {
+          transform: rotateY(180deg);
+        }
+      }
+      .glyphicon {
+        font-size: 20px;
+        transition: 0.5s;
+      }
+      ._num {
+        margin-left: 10px;
+        font-family: MicrosoftYaHei;
+        font-size: 24px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #ffffff;
+      }
+  
+      @media (max-width: 767px) {
+        text-align: center !important;
+      }
+    }
+  
+    ._addr {
+      color: #fff;
+  
+      p {
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+      }
+      @media (max-width: 767px) {
+        padding-top: 20px;
+        p {
+          text-align: center !important;
+        }
+      }
+    }
+  }
+
+
 }
 
 /***小屏 width 0-414 ***/

@@ -54,8 +54,14 @@ gulp.task('release', ["build-scss", "build"], function () {
 		//.pipe(minHtml({ collapseWhitespace: true }))  // 压缩html
 		.pipe(gulp.dest('./dist/'));                  //复制html
 
-	gulp.src('./src/static/css/**/*.*')
+	gulp.src(['./src/static/css/*.css'])
 		.pipe(minCss()).pipe(gulp.dest('./dist/static/css')); //复制css
+
+	gulp.src(['./src/static/css/fonts/**/*.*'])
+	.pipe(gulp.dest('./dist/static/css/fonts')); //复制fonts-css
+
+	gulp.src(['./src/static/css/cstFonts/**/*.*'])
+	.pipe(gulp.dest('./dist/static/css/cstFonts')); //复制cstFonts-css
 
 	gulp.src('./src/static/js/**/*.*')
 		.pipe(gulp.dest('./dist/static/js/')); //复制js
