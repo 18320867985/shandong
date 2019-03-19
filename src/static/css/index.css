@@ -6393,6 +6393,30 @@ button.close {
 .paging .item, .paging input {
   margin-bottom: 15px; }
 
+/*公共scss*/
+.one-share {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  margin-top: -130px;
+  height: 260px; }
+
+.one-share-ttl {
+  height: 17px;
+  text-align: center;
+  font-family: MicrosoftYaHei;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #999999; }
+
+.one-share-item {
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+  cursor: pointer; }
+
 /*head*/
 /*footer*/
 /*index*/
@@ -7565,7 +7589,10 @@ body {
   /***中屏 width 768-991***/
   /*** 大屏width 992-1199 ***/ }
   .product-list-imgs a {
-    text-decoration: none; }
+    text-decoration: none;
+    border: none; }
+    .product-list-imgs a ._item {
+      border: 1px solid #ddd; }
   .product-list-imgs ._item {
     position: relative;
     display: inline-block;
@@ -7579,7 +7606,8 @@ body {
     transition: 2s;
     overflow: hidden; }
     .product-list-imgs ._item > div {
-      position: absolute; }
+      position: absolute;
+      z-index: 999; }
     .product-list-imgs ._item .br-1 {
       left: -100%;
       bottom: 0;
@@ -8160,7 +8188,10 @@ body {
       padding: 20px 30px;
       height: 100%;
       overflow: hidden; }
+      .company-desc .company-desc-1 ._item-l .row {
+        width: 100%; }
       .company-desc .company-desc-1 ._item-l p {
+        width: 100%;
         padding: 20px;
         font-family: MicrosoftYaHei;
         font-size: 16px;

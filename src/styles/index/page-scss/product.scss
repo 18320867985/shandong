@@ -51,6 +51,10 @@
   text-align: center;
   a {
     text-decoration: none;
+    border: none;
+    ._item {
+      border: 1px solid #ddd;
+    }
   }
   ._item {
     position: relative;
@@ -59,11 +63,13 @@
     text-align: center;
     width: 272px;
     height: 272px;
+
     border: 1px solid #ddd;
     transition: 2s;
 		 overflow: hidden;
 		>div{
-			position: absolute;
+      position: absolute;
+      z-index: 999;
 			
 		}
 		.br-1{

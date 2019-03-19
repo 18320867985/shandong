@@ -1,6 +1,6 @@
 import   "../../libs/autoRun.js";   // must   import
 
-import   "../../libs/common.js";  
+import   "./common.js";  
 
 import   "../../libs/include.js";  
 

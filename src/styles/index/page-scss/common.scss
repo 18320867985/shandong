@@ -1,0 +1,29 @@
+
+/*公共scss*/
+.one-share{
+    position: fixed;
+    top: 50%;
+    left: 20px;
+     margin-top:-130px;
+    height: 260px;
+
+}
+
+.one-share-ttl{
+     
+    height: 17px;
+     text-align: center;
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+
+.one-share-item{
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+}

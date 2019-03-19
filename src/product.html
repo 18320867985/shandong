@@ -55,12 +55,65 @@
 
 						</div>
 
-						<div class="product-list-imgs">
 
+						<div class="product-list-imgs">
+							<div class=" col-xs-12 col-sm-4 col-md-3">
+								<a href="./product-dtl.html">
+									<div class="_item">
+										<img src="./static/images/product/product180@2x.png" alt="产品列表图">
+										<!--滑条-->
+										<div class="br-1"></div>
+										<div class="br-2"></div>
+										<div class="br-3"></div>
+										<div class="br-4"></div>
+									</div>
+									<p class="ellipsis">PP-H-XD-000聚丙烯树脂</p>
+								</a>
+							</div>
 							<div class=" col-xs-12 col-sm-4 col-md-3">
 								<a href="./product-dtl.html">
 									<div class="_item">
 										<img src="./static/images/product/produc425@2x.png" alt="产品列表图">
+										<!--滑条-->
+										<div class="br-1"></div>
+										<div class="br-2"></div>
+										<div class="br-3"></div>
+										<div class="br-4"></div>
+									</div>
+									<p class="ellipsis">PP-H-XD-000聚丙烯树脂</p>
+								</a>
+							</div>
+							<div class=" col-xs-12 col-sm-4 col-md-3">
+								<a href="./product-dtl.html">
+									<div class="_item">
+										<img src="./static/images/product/produc425@2x.png" alt="产品列表图">
+										<!--滑条-->
+										<div class="br-1"></div>
+										<div class="br-2"></div>
+										<div class="br-3"></div>
+										<div class="br-4"></div>
+									</div>
+									<p class="ellipsis">PP-H-XD-000聚丙烯树脂</p>
+								</a>
+							</div>
+							<div class=" col-xs-12 col-sm-4 col-md-3">
+								<a href="./product-dtl.html">
+									<div class="_item">
+										<img src="./static/images/product/product180@2x.png" alt="产品列表图">
+										<!--滑条-->
+										<div class="br-1"></div>
+										<div class="br-2"></div>
+										<div class="br-3"></div>
+										<div class="br-4"></div>
+									</div>
+									<p class="ellipsis">PP-H-XD-000聚丙烯树脂</p>
+								</a>
+							</div>
+
+							<div class=" col-xs-12 col-sm-4 col-md-3">
+								<a href="./product-dtl.html">
+									<div class="_item">
+										<img src="./static/images/product/product075@2x.png" alt="产品列表图">
 										<!--滑条-->
 										<div class="br-1"></div>
 										<div class="br-2"></div>
@@ -193,7 +246,7 @@
 	<script src="./static/js/jquery.touchSwipe.min.js" type="text/javascript" charset="utf-8"></script>
 	<script data-parent="umd" data-umd="index" src="./static/js/index.js" type="text/javascript"
 		charset="utf-8"></script>
-	<!--[if lte IE 8]>
+	<!--[if lte IE 9]>
 		<script src="./static/js/respond.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./static/js/ie8.js" type="text/javascript" charset="utf-8"></script>
 	<![endif]-->
@@ -203,17 +256,20 @@
 		var isShowPrevNext = true;
 		var isShowFirstLast = true;
 		var isShowPrevNextGroup = true;
+		var isShowSkip = true;
 		pg();
 		function pg() {
 			if (window.innerWidth < 768) {
 				isShowNumber = false;
 				isShowFirstLast = false;
 				isShowPrevNextGroup = false;
+				isShowSkip = false;
 
 			} else {
 				isShowNumber = true;
 				isShowFirstLast = true;
 				isShowPrevNextGroup = true;
+				isShowSkip = true;
 
 			}
 		}
@@ -232,7 +288,7 @@
 			showCount: 5, //  显示的页码数目
 			selector: ".paging", //分页父元素
 			isAnimation: true, //是否显示动画
-			isShowSkip: true, // 是否显示跳转页
+			isShowSkip: isShowSkip, // 是否显示跳转页
 			//prevText: "&lt;&lt;",
 			//nextText: "&gt;&gt;",
 			isShowNumber: isShowNumber,   //是否显示数字

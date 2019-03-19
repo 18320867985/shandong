@@ -57,7 +57,11 @@
             padding: 20px 30px;
             height: 100%;
             overflow: hidden;
+            .row{
+                width: 100%;
+            }
             p {
+                width: 100%;
                 padding: 20px;
                 font-family: MicrosoftYaHei;
                 font-size: 16px;
