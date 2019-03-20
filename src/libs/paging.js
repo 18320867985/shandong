@@ -88,6 +88,7 @@ window.paging = (function($) {
 			// 设置总页数
 			getAllPage();
 			page.callback(page);
+			$(document).on("pagingCallback",function(){page.callback(page);});
 		}
 
 		page.render = function() {
@@ -99,7 +100,7 @@ window.paging = (function($) {
 
 			// 添加页码到页面元素里
 			$(page.selector).html(_create(page.index));
-
+			
 		}
 
 		page.init();

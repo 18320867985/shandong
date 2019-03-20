@@ -7,7 +7,7 @@
   img {
     width: 100%;
     min-height: 150px;
-    max-height: 300px;
+    max-height: 600px;
   }
 }
 
@@ -51,10 +51,7 @@
   text-align: center;
   a {
     text-decoration: none;
-    border: none;
-    ._item {
-      border: 1px solid #ddd;
-    }
+
   }
   ._item {
     position: relative;
@@ -65,7 +62,7 @@
     height: 272px;
 
     border: 1px solid #ddd;
-    transition: 2s;
+    transition: transform 2s;
 		 overflow: hidden;
 		>div{
       position: absolute;
@@ -131,7 +128,7 @@
 
     &:hover {
       box-shadow: 2px 2px 2px #ddd;
-      transform: translate(-10px);
+      transform: translate(-15px);
      
     }
 

@@ -1,29 +1,50 @@
-
 /*公共scss*/
-.one-share{
-    position: fixed;
-    top: 50%;
-    left: 20px;
-     margin-top:-130px;
-    height: 260px;
 
+/*一键分享*/
+.one-share {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  z-index: 9999;
+  margin-top: -130px;
+  height: 260px;
 }
 
-.one-share-ttl{
-     
-    height: 17px;
-     text-align: center;
-	font-family: MicrosoftYaHei;
-	font-size: 16px;
-	font-weight: normal;
-	font-stretch: normal;
-	letter-spacing: 0px;
-	color: #999999;
+.one-share-ttl {
+  height: 17px;
+  text-align: center;
+  font-family: MicrosoftYaHei;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #999999;
 }
 
-.one-share-item{
-    height: 40px;
-    width: 40px;
-    margin-top: 20px;
-    cursor: pointer;
+.one-share-item {
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.one-share-qrcode {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  z-index: 999999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(#333, 0.8);
+
+  &.active {
+    display: flex;
+  }
+  canvas{
+      width: 256px;
+      height: 256px;
+      box-shadow: 2px 2px 5px #333,2px 2px 5px #333;
+  }
 }

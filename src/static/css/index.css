@@ -6328,6 +6328,13 @@ button.close {
   background: #fff;
   vertical-align: middle; }
 
+.paging .count-items, .paging .count-num {
+  display: inline-block;
+  padding: 5px 8px;
+  margin-bottom: 15px;
+  margin-top: 0;
+  vertical-align: middle; }
+
 /*鼠标移动的样式 */
 .paging a:hover {
   cursor: pointer;
@@ -6393,11 +6400,17 @@ button.close {
 .paging .item, .paging input {
   margin-bottom: 15px; }
 
+.paging .no-data {
+  color: orangered;
+  font-size: 24px; }
+
 /*公共scss*/
+/*一键分享*/
 .one-share {
   position: fixed;
   top: 50%;
   left: 20px;
+  z-index: 9999;
   margin-top: -130px;
   height: 260px; }
 
@@ -6416,6 +6429,31 @@ button.close {
   width: 40px;
   margin-top: 20px;
   cursor: pointer; }
+
+.one-share-qrcode {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  z-index: 999999;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(51, 51, 51, 0.8); }
+  .one-share-qrcode.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .one-share-qrcode canvas {
+    width: 256px;
+    height: 256px;
+    -webkit-box-shadow: 2px 2px 5px #333,2px 2px 5px #333;
+            box-shadow: 2px 2px 5px #333,2px 2px 5px #333; }
 
 /*head*/
 /*footer*/
@@ -6444,7 +6482,9 @@ body {
       width: 120px;
       line-height: 52px;
       text-align: center;
-      color: #076ce0; }
+      color: #076ce0;
+      -webkit-transition: none;
+      transition: none; }
       .index-head .collapse.navbar-collapse .nav.navbar-nav li a, .index-head .collapse.navbar-collapse .nav li a {
         display: block;
         width: 100%;
@@ -6984,10 +7024,6 @@ body {
           text-align: left;
           color: #076ce0;
           font-weight: normal; }
-        .index-head .collapse.navbar-collapse .nav.navbar-nav li.active a {
-          color: #fff;
-          background: #076ce0;
-          border-radius: 4px; }
   /*内容页*/
   /*企业介绍*/
   .index-cont-jieshao {
@@ -7551,7 +7587,7 @@ body {
   .product-banner img {
     width: 100%;
     min-height: 150px;
-    max-height: 300px; }
+    max-height: 600px; }
 
 .product-list-ttl {
   margin-top: 120px; }
@@ -7590,10 +7626,7 @@ body {
   /***中屏 width 768-991***/
   /*** 大屏width 992-1199 ***/ }
   .product-list-imgs a {
-    text-decoration: none;
-    border: none; }
-    .product-list-imgs a ._item {
-      border: 1px solid #ddd; }
+    text-decoration: none; }
   .product-list-imgs ._item {
     position: relative;
     display: inline-block;
@@ -7603,8 +7636,10 @@ body {
     width: 272px;
     height: 272px;
     border: 1px solid #ddd;
-    -webkit-transition: 2s;
-    transition: 2s;
+    -webkit-transition: -webkit-transform 2s;
+    transition: -webkit-transform 2s;
+    transition: transform 2s;
+    transition: transform 2s, -webkit-transform 2s;
     overflow: hidden; }
     .product-list-imgs ._item > div {
       position: absolute;
@@ -7652,8 +7687,8 @@ body {
     .product-list-imgs ._item:hover {
       -webkit-box-shadow: 2px 2px 2px #ddd;
               box-shadow: 2px 2px 2px #ddd;
-      -webkit-transform: translate(-10px);
-              transform: translate(-10px); }
+      -webkit-transform: translate(-15px);
+              transform: translate(-15px); }
     .product-list-imgs ._item img {
       display: inline-block;
       float: none;
@@ -8470,7 +8505,14 @@ body {
       color: #999999;
       overflow: hidden;
       text-overflow: ellipsis; }
-    .news-list-a-items ._item-r a {
+      .news-list-a-items ._item-r > div a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #999999; }
+        .news-list-a-items ._item-r > div a:hover {
+          color: #777; }
+    .news-list-a-items ._item-r > a {
       display: block;
       margin-top: 20px;
       text-align: right; }

@@ -27,6 +27,16 @@ $count-item-color:#666;
     vertical-align: middle;
 }
 
+.paging .count-items,.paging .count-num{
+	
+    display: inline-block;
+	padding: 5px 8px;
+	margin-bottom: 15px;
+	margin-top: 0;
+	vertical-align: middle;
+    
+}
+
 
 /*鼠标移动的样式 */
 .paging a:hover {
@@ -121,5 +131,9 @@ $count-item-color:#666;
     .item,input{
         margin-bottom: 15px;
     }
+	.no-data{
+		 color: orangered;
+		 font-size: 24px;
+	}
 
 }

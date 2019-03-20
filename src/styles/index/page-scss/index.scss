@@ -34,7 +34,8 @@ body {
         line-height: 52px;
         //margin-right: 24px;
         text-align: center;
-				color: $text-primary;
+        color: $text-primary;
+        transition: none;
 
         a {
           display: block;
@@ -724,7 +725,7 @@ body {
           //margin-right: 24px;
           text-align: left;
           border-radius: 0 !important;
-
+    
           a {
             display: block;
             width: 100%;
@@ -734,16 +735,9 @@ body {
             text-align: left;
             color: $text-primary;
             font-weight: normal;
+          
           }
 
-          // active
-          &.active {
-            a {
-              color: #fff;
-              background: $text-primary;
-              border-radius: 4px;
-            }
-          }
         }
       }
     }

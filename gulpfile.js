@@ -286,9 +286,11 @@ function rollupBuild(isBuild, name, dir) {
 		plugins: [
 			vue(),
 			vembedCss(),
+
 			/*commonjs 转换 es6*/
 			resolve(),
 			commonjs(),
+			
 			replace({
 				'process.env.NODE_ENV': isBuild ? JSON.stringify('production') : JSON.stringify('development'),
 			}),
