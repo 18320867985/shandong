@@ -248,7 +248,7 @@
 		});
 
 		function callback(obj) {
-			alert(type)
+			
 			var id = obj.index; //当前页码
 			obj.pageItem = 5; //  每页条数
 
@@ -257,9 +257,9 @@
 				
 				if(res.allItem>0){
 				var template = Handlebars.compile(document.getElementById("handlebars_templete").innerHTML);
-				
+				var lists=res.data.filter(function(item){ return item.type==type;});
 				var html = template({
-					lists: res.data
+					lists: lists
 				});
 				
 				$(".news-list-item.active .news-list-a-items").html(html);
@@ -289,6 +289,7 @@
 			type=$(this).attr("data-type");
 			$(this).trigger("pagingCallback");
 		});
+		
 	</script>
 </body>
 
