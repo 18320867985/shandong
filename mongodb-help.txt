@@ -117,7 +117,7 @@ rs:PRIMARY> db.auth("root","123456")
  mongodump -h localhost --port 27017 -o  e:\mongodb\dump
  
 7.2恢复
-mongorestore -h localhost --port 27017 -d  e:\mongodb\dump\admin
+mongorestore -h localhost --port 27017  --dir  e:\mongodb\dump\admin   -d admin
 
 // 备份
 --备份单个表

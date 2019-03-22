@@ -6633,7 +6633,7 @@ body {
   margin-top: 100px;
   width: 100%;
   min-height: 852px;
-  background: url(../../static/images/prod-bg.png); }
+  background: url(../../static/images/prod-bg.jpg); }
   .index-cont-prod .zm {
     margin-top: 120px;
     text-align: center;
@@ -6920,7 +6920,7 @@ body {
       color: #f8f8f8; }
 
 .index-footer-link {
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 50px;
   text-align: center; }
   .index-footer-link li {
@@ -8633,8 +8633,8 @@ body {
 .news-dtl-ttl h3 {
   margin: 0;
   font-family: MicrosoftYaHei;
-  font-size: 42px;
-  line-height: 40px;
+  font-size: 36px;
+  line-height: 36px;
   font-weight: normal;
   font-stretch: normal;
   letter-spacing: 0px;

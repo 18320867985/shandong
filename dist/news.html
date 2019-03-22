@@ -38,7 +38,7 @@
 
 			<!--banner-->
 			<div class="news-banner">
-				<img class="img-responsive" src="./static/images/news/news-banner.png" alt="banner image">
+				<img class="img-responsive" src="./static/images/news/news-banner.jpg" alt="banner image">
 
 				<div class="news-banner-toggle">
 					<div class="col-xs-6 _item active" data-target="#news_a" data-type="0">
@@ -161,7 +161,7 @@
 								<h3 class="ellipsis">{{ttl}}</h3>
 								<div>
 									<a href="./news-dtl.html?id={{id}}">
-										{{desc}}
+										{{{desc}}}
 									</a>
 								</div>
 								<a href="./news-dtl.html?id">查看全文></a>
@@ -266,6 +266,7 @@
 
 				// 成功之后赋值
 				obj.allItem = res.allItem; //  总条数
+				//obj.index=1;
 				obj.render();
 				
 				}else{
@@ -289,6 +290,7 @@
 			type=$(this).attr("data-type");
 			$(this).trigger("pagingCallback");
 		});
+		
 	</script>
 </body>
 
