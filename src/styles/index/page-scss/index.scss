@@ -50,9 +50,10 @@ body {
         // active
         &.active {
           a {
-            color: #fff;
+            color:#fff;
             background: $text-primary;
             border-radius: 4px;
+						
           }
         }
       }

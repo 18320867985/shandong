@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var watch=require("gulp-watch");
+var watch = require("gulp-watch");
 var del = require("del");
 var minCss = require('gulp-clean-css'); //gulp-minify-css:压缩css文件 npm install gulp-clean-css
 var connect = require('gulp-connect'); //gulp-connect 创建服务器  npm install --save-dev gulp-connect
@@ -29,85 +29,88 @@ var autoprefixer = require('autoprefixer'); // npm install --save-dev autoprefix
 var sass = require('gulp-sass');
 var eslint = require("gulp-eslint"); // 检查es5 ees6 js gulp-eshint
 
-var appJs = require("./entry-module.js"); // js 打包入口
-var appScss = require("./entry-style.js"); // scss 打包入口
+var less = require("gulp-less");
+
+var appJs = require("./entry-js.js"); // js 打包入口
+var appScss = require("./entry-css.js"); // scss 打包入口
+var isScss = true; // scss=>true 或 less=>false
 
 // 文件路径
 var paths = {
-	stylePath: ['./src/styles/**/*.scss','./src/scss/**/*.scss'],
+	stylePath: ['./src/styles/**/*.*', './src/scss/**/*.scss', './src/less/**/*.less'],
 	htmlPath: ['./src/**/*.html'],
-	jspath: ['./src/modules/**/*.*','./src/components/**/*.*','./src/libs/**/*.*'],
+	jspath: ['./src/modules/**/*.*', './src/components/**/*.*', './src/libs/**/*.*'],
 }
 
 
 // 清空目录gulp-del
-gulp.task('del', function (cd) {
+gulp.task('del', function(cd) {
 
 	del(["./dist"], cd); //gulp-del
 });
 
 
 /******发布文件*******/
-gulp.task('release', ["build-scss", "build"], function () {
+gulp.task('release', ["build-css", "build-js"], function() {
 
 	gulp.src(['./src/**/*.html'])
 		//.pipe(minHtml({ collapseWhitespace: true }))  // 压缩html
-		.pipe(gulp.dest('./dist/'));                  //复制html
+		.pipe(gulp.dest('./dist/')); //复制html
 
 	gulp.src(['./src/static/css/*.css'])
 		.pipe(minCss()).pipe(gulp.dest('./dist/static/css')); //复制css
 
 	gulp.src(['./src/static/css/fonts/**/*.*'])
-	.pipe(gulp.dest('./dist/static/css/fonts')); //复制fonts-css
+		.pipe(gulp.dest('./dist/static/css/fonts')); //复制fonts-css
 
 	gulp.src(['./src/static/css/cstFonts/**/*.*'])
-	.pipe(gulp.dest('./dist/static/css/cstFonts')); //复制cstFonts-css
+		.pipe(gulp.dest('./dist/static/css/cstFonts')); //复制cstFonts-css
 
 	gulp.src('./src/static/js/**/*.*')
 		.pipe(gulp.dest('./dist/static/js/')); //复制js
 
 	gulp.src('./src/static/images/**/*.*')
-		.pipe(img())                     // 压缩图片
+		//.pipe(img())                     // 压缩图片
 		.pipe(gulp.dest('./dist/static/images/')); //复制img
 
-		gulp.src(['./src/ueditor/**/*.*'])  // ueditor 富文本编辑器
-		.pipe(gulp.dest('./dist/ueditor'));  
+	gulp.src(['./src/ueditor/**/*.*']) // ueditor 富文本编辑器
+		.pipe(gulp.dest('./dist/ueditor'));
 
-	gulp.src(['./src/static/**/*.*', '!./src/static/css/**/*.*', '!./src/static/js/**/*.*', '!./src/static/images/**/*.*']).pipe(gulp.dest('./dist/static'));
+	gulp.src(['./src/static/**/*.*', '!./src/static/css/**/*.*', '!./src/static/js/**/*.*',
+		'!./src/static/images/**/*.*'
+	]).pipe(gulp.dest('./dist/static'));
 
 });
 
 /* watch监听*/
-gulp.task("watch", ['build-scss', 'build', 'connect'], function () {
+gulp.task("watch", ['build-css', 'build-js', 'connect'], function() {
 
 	//合拼vue组件css和js文件
-	watch(paths.jspath, function(){
-		gulp.start("dev");
+	watch(paths.jspath, function() {
+		gulp.start("dev-js");
 	});
 
 	//styles的scss
-	watch(paths.stylePath, function () {
-		gulp.start("dev-scss",function(){
-			gulp.src(paths.stylePath).pipe(connect.reload());
-		});
+	watch(paths.stylePath, function() {
+		gulp.start("dev-css");
 
 	});
 
 	//监听html
-	watch(paths.htmlPath,function(){
+	watch(paths.htmlPath, function() {
 		gulp.start("html");
 	});
 
 });
 
-gulp.task("html", function () {
+gulp.task("html", function() {
 	gulp.src(paths.htmlPath).pipe(connect.reload());
 });
 
 
 //开启http服务器
 
-var sev=function(){
+var sev = function() {
 	connect.server({
 		root: 'src',
 		livereload: true,
@@ -117,85 +120,97 @@ var sev=function(){
 	});
 }
 gulp.task('connect',
- function () {
-	sev();
-});
-
-
-
-// 全局的scss 
-gulp.task("dev-scss", async function () {
-
-	try {
-		return await Promise.all(appScss.list.map(async function (item) {
-			if (appScss.isWatchAll) {
-				return buildScss(item, appScss.dir);
-			} else if (item == appScss.watch) {
-				return buildScss(item, appScss.dir);
-			}
-
-		})).then(function () {
-			reload(); // 重启浏览器
-		});
-
-	} catch (error) {
-		console.log(error);
-	}
-
-});
-
-  gulp.task("build-scss", async function () {
-
-	try {
-		return await Promise.all(appScss.list.map(async function (item) {
-			return buildScss(item, appScss.dir);
-		})).then(function () {
-			//reload(); // 重启浏览器
-		});
-
-	} catch (error) {
-		console.log(error);
-	}
-
-});
-
-
-function buildScss(item, dir) {
-	
-	try {
-		return new Promise(function (resolve, reject) {
-			var result = gulp.src(dir + item + "/all.scss")
-				.pipe(sass().on('error', sass.logError)) // sass编译
-				.pipe(postcss([autoprefixer])) // 自动添加css3缀-webkit-  适合用于手机端 
-				.pipe(rename(item + ".css")).pipe(gulp.dest('./src/static/css'));
-			resolve(result);
-		});
-	
-	} catch (error) {
-		console.log(error);
-	}
-	
-}
-
-
-
-function buildCss(item) {
-	return new Promise(function (resolve, reject) {
-		var result = gulp.src("./src/static/css/" + item.trim() + ".css")
-			.pipe(postcss([autoprefixer])) // 自动添加css3缀-webkit-
-			.pipe(rename(item.trim() + ".css")).pipe(gulp.dest('./src/static/css'));
-		resolve(result);
+	function() {
+		sev();
 	});
+
+
+
+// 全局的css 
+gulp.task("dev-css", async function() {
+
+	try {
+		appScss.list.forEach(function(item) {
+
+			if (item == appScss.watch) {
+				if (isScss) {
+					gulp.src(appScss.dir + item + "/all.scss")
+						.pipe(sass().on('error', sass.logError)) // sass编译
+						.pipe(postcss([autoprefixer])) // 自动添加css3缀-webkit-  适合用于手机端 
+						.pipe(rename(item + ".css")).pipe(gulp.dest('./src/static/css')).pipe(connect.reload());
+				} else {
+					gulp.src(appScss.dir + item + "/all.less")
+						.pipe(less()) // less编译
+						.pipe(postcss([autoprefixer])) // 自动添加css3缀-webkit-  适合用于手机端 
+						.pipe(rename(item + ".css")).pipe(gulp.dest('./src/static/css')).pipe(connect.reload());
+				}
+			}
+		});
+
+	} catch (error) {
+		console.log(error);
+	}
+
+});
+
+gulp.task("build-css", async function() {
+
+	try {
+		return await Promise.all(appScss.list.map(async function(item) {
+			return compileCss(item, appScss.dir);
+		}));
+
+	} catch (error) {
+		console.log(error);
+	}
+
+});
+
+
+function compileCss(item, dir) {
+
+	if (isScss) {
+		try {
+
+			return new Promise(function(resolve, reject) {
+				var result = gulp.src(dir + item + "/all.scss")
+					.pipe(sass().on('error', sass.logError)) // sass编译
+					.pipe(postcss([autoprefixer])) // 自动添加css3缀-webkit-  适合用于手机端 
+					.pipe(rename(item + ".css")).pipe(gulp.dest('./src/static/css'));
+				resolve(result);
+			});
+
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
+	// less
+	else {
+		try {
+			return new Promise(function(resolve, reject) {
+				var result = gulp.src(dir + item + "/all.less")
+					.pipe(less()) // less编译
+					.pipe(postcss([autoprefixer])) // 自动添加css3缀-webkit-  适合用于手机端 
+					.pipe(rename(item + ".css")).pipe(gulp.dest('./src/static/css'));
+				resolve(result);
+			});
+
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
 }
 
 
-function reload() {
-	return new Promise(function (resolve, reject) {
+
+function reloadJs() {
+	return new Promise(function(resolve, reject) {
 		var result = gulp.src(paths.jspath).pipe(connect.reload());
 		resolve(result);
 	});
 }
-
 
 
 // 检查js
@@ -203,18 +218,16 @@ function reload() {
 // 	//gulp.src(paths.jsBabel).pipe(eslint()).pipe(eslint.format());
 // });
 
-gulp.task('dev', async function () {
+gulp.task('dev-js', async function() {
 
 	try {
-		return await Promise.all(appJs.list.map(async function (item) {
-			if (appJs.isWatchAll) {
-				return asyncDevList(item, appJs.dir);
-			} else if (item == appJs.watch) {
+		return await Promise.all(appJs.list.map(async function(item) {
+			if (item == appJs.watch) {
 				return asyncDevList(item, appJs.dir);
 			}
 
-		})).then(function () {
-			reload(); // 重启浏览器
+		})).then(function() {
+			reloadJs(); // 重启浏览器
 		});
 
 	} catch (error) {
@@ -223,13 +236,11 @@ gulp.task('dev', async function () {
 
 });
 
-gulp.task('build', async function () {
+gulp.task('build-js', async function() {
 	try {
-		return await Promise.all(appJs.list.map(async function (item) {
+		return await Promise.all(appJs.list.map(async function(item) {
 			return asyncBuildList(item, appJs.dir);
-		})).then(function () {
-			reload(); // 重启浏览器
-		});
+		}));
 	} catch (error) {
 		console.log(error);
 	}
@@ -249,9 +260,6 @@ async function asyncDevList(item, dir) {
 		strict: false, //在生成的包中省略`"use strict";`
 	});
 
-	// 如果用高版本浏览器 把他禁用打包速度加快点 默认发布时已加上asyncBuildList()函数
-	//item="vue-"+item;
-	//await buildCss(item);
 
 }
 
@@ -266,13 +274,11 @@ async function asyncBuildList(item, dir) {
 		strict: false, //在生成的包中省略`"use strict";`
 	});
 
-	item = "vue-" + item;
-	await buildCss(item);
 }
 
 // 是否压缩js
 function uglify_list(isBuild) {
-	return isBuild ? uglify() : function () { };
+	return isBuild ? uglify() : function() {};
 }
 
 function rollupBuild(isBuild, name, dir) {
@@ -286,11 +292,9 @@ function rollupBuild(isBuild, name, dir) {
 		plugins: [
 			vue(),
 			vembedCss(),
-
 			/*commonjs 转换 es6*/
 			resolve(),
 			commonjs(),
-			
 			replace({
 				'process.env.NODE_ENV': isBuild ? JSON.stringify('production') : JSON.stringify('development'),
 			}),
@@ -305,4 +309,3 @@ function rollupBuild(isBuild, name, dir) {
 		],
 	});
 }
-
