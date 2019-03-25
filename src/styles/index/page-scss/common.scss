@@ -18,7 +18,7 @@
   font-weight: normal;
   font-stretch: normal;
   letter-spacing: 0px;
-  color: #999999;
+  color: $text-primary;
 }
 
 .one-share-item {
@@ -47,4 +47,45 @@
       height: 256px;
       box-shadow: 2px 2px 5px #333,2px 2px 5px #333;
   }
+}
+
+
+
+@media (max-width: 767px) {
+  .product-list-ttl,
+  .contact-ttl {
+    margin-top: 50px;
+    .zm {
+      text-align: center;
+      width: 100%;
+      span:nth-child(1) {
+     
+        height: 26px;
+        font-family: Roboto-Regular;
+        font-size: 28px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #666666;
+      }
+      span:nth-child(2) {
+        font-family: Roboto-Regular;
+        font-size: 28px;
+        font-weight: normal;
+        letter-spacing: 0px;
+        color: #076ce0;
+      }
+    }
+    .ttl {
+      margin-top: 20px;
+      text-align: center;
+      color: #666;
+      font-family: MicrosoftYaHei;
+      font-size: 25px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+    }
+  }
+ 
 }
