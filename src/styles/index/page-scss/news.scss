@@ -6,10 +6,12 @@
 .news-banner {
   position: relative;
   width: 100%;
+  max-height: 460px;
   img {
     width: 100%;
+    height: auto;
     min-height: 180px;
-    max-height: 600px;
+    max-height: 460px;
   }
 }
 
@@ -288,10 +290,11 @@
       box-shadow: 2px 2px 5px #f0f2f5;
       h3 {
         margin: 20px 0;
-        width: 239px;
+        // width: 239px;
         height: 22px;
+        text-align: left;
         font-family: MicrosoftYaHei;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: normal;
         font-stretch: normal;
         letter-spacing: 0px;
@@ -359,10 +362,7 @@
         font-size: 15px;
       }
     }
-    h3 {
-      margin: 0;
-      font-size: 18px;
-    }
+    
   }
   .news-list-a-items ._item-l p:nth-child(1) {
     font-size: 32px;

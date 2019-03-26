@@ -38,9 +38,11 @@
 
 .concat-banner {
   width: 100%;
+  max-height: 460px;
   img {
     width: 100%;
-    max-height: 600px;
+    height: auto;
+    max-height: 460px;
     min-height: 180px;
   }
 }
@@ -48,7 +50,7 @@
 /*title*/
 
 .contact-ttl {
-  margin-top: 120px;
+
 }
 
 .contact-ttl-icons {

@@ -37,10 +37,13 @@
 /*banner*/
 
 .company-banner {
+  max-height: 460px;
   img {
-    max-height: 600px;
-    min-height: 180px;
     width: 100%;
+    height: auto;
+    max-height: 460px;
+    min-height: 180px;
+ 
   }
 }
 

@@ -3,13 +3,13 @@
 /*页头 -2019-3-25*/
 
 body {
-  padding-top: 111px;
+  padding-top: 91px;
 }
 
 .index-head {
   /*导航条*/
   .navbar.navbar-default {
-    padding: 30px 0;
+    padding: 20px 0;
     background: #fff;
     border: none;
     box-shadow: -2px 2px 5px #ddd;
@@ -76,11 +76,14 @@ body {
 /*
 轮播图*/
 .index-cont-swiper {
-  .carousel-inner {
-    max-height: 600px;
+   box-shadow: 1px 0 2px #ddd;
+  .carousel-inner { 
+    max-height: 450px;
     .item {
       img {
         width: 100%;
+        height: auto;
+        max-height: 450px;
         min-height: 180px;
       }
     }
@@ -91,27 +94,35 @@ body {
       top: 50%;
       left: 50%;
       font-size: 24px;
-      margin: -12px;
+      margin-top: -12px;
+    }
+  }
+  .carousel-indicators {
+    li+li{
+      margin-left: 5px;
+    }
+    li.active{
+      background: $text-primary;
+      border: 1px solid $text-primary;
     }
   }
 }
 
-/*企业介绍*/
-.index-cont-jieshao {
-  margin-top: 120px;
+/*标题的公共css*/
+.index-cont{
   .zm {
-    text-align: center;
-    width: 100%;
-
-    span:nth-child(1) {
-      width: 426px;
-      height: 26px;
+    margin-top: 80px;
+     text-align: center;
+    span{
       font-family: Roboto-Regular;
       font-size: 36px;
       font-weight: normal;
       font-stretch: normal;
       letter-spacing: 0px;
       color: #666666;
+    }
+    span:nth-child(1) {
+      
     }
 
     span:nth-child(2) {
@@ -124,22 +135,32 @@ body {
   }
 
   .ttl {
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: center;
     color: #666;
+    font-size: 30px;
   }
+}
+
+/*企业介绍*/
+.index-cont-jieshao {
+  .zm {
+    text-align: center;
+    width: 100%;
+  }
+
 
   .cent {
     position: relative;
-    margin-top: 120px;
+    margin-top: 60px;
     text-align: center;
 
     /*旋转图*/
     img {
       display: inline-block;
       float: none;
-      width: 473px;
-      height: 473px;
+      width: 420px;
+      height: 420px;
       transition: 2s;
       &:hover {
         transform: rotate(720deg);
@@ -207,7 +228,7 @@ body {
     }
     /*企业愿景 */
     ._bottom_l {
-      bottom: 0px;
+      bottom: 80px;
       left: 0;
       width: 306px;
       height: 73px;
@@ -226,7 +247,7 @@ body {
 
     /*企业价值 */
     ._bottom_r {
-      bottom: 0px;
+      bottom: 80px;
       right: 0;
       width: 306px;
       height: 73px;
@@ -247,39 +268,26 @@ body {
 
 /*产品介绍*/
 .index-cont-prod {
-  margin-top: 100px;
+  margin-top: 80px;
   width: 100%;
-  min-height: 852px;
+  min-height: 800px;
   background: url(../../static/images/prod-bg.jpg);
 
   .zm {
-    margin-top: 120px;
-    text-align: center;
+    span:nth-child(1) {
+      color:#fff;
+    }
 
-    height: 26px;
-    font-family: Roboto-Regular;
-    font-size: 36px;
-    font-weight: normal;
-    font-stretch: normal;
-    letter-spacing: 0px;
-    color: #ffffff;
   }
   .ttl {
-    width: 100%;
-    height: 35px;
-    margin-top: 50px;
-    text-align: center;
-    font-family: MicrosoftYaHei;
-    font-size: 36px;
-    font-weight: normal;
-    font-stretch: normal;
-    letter-spacing: 0px;
-    color: #ffffff;
+   color:#fff;
+   
   }
+
 
   .box {
     width: 1200px;
-    margin-top: 59px;
+    margin-top: 50px;
     //background: transparent;
     display: flex;
     flex-flow: row wrap;
@@ -419,40 +427,18 @@ body {
 
 /*新闻资讯*/
 .index-cont-news {
-  margin-top: 120px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   .zm {
     text-align: center;
     width: 100%;
-
-    span:nth-child(1) {
-      width: 426px;
-      height: 26px;
-      font-family: Roboto-Regular;
-      font-size: 36px;
-      font-weight: normal;
-      font-stretch: normal;
-      letter-spacing: 0px;
-      color: #666666;
-    }
-
-    span:nth-child(2) {
-      font-family: Roboto-Regular;
-      font-size: 36px;
-      font-weight: normal;
-      letter-spacing: 0px;
-      color: #076ce0;
-    }
   }
 
-  .ttl {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-    color: #666;
-  }
   a {
     text-decoration: none;
+  }
+  .index-cont-news-cont{
+    margin-top: 50px;
+
   }
   /*左边大图*/
   .thumbnail {
@@ -602,7 +588,7 @@ body {
   position: relative;
   // max-width: 634px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 .index-footer-nav {
@@ -635,8 +621,7 @@ body {
 }
 
 .index-footer-link {
-  margin-top: 50px;
-  // margin-bottom: 50px;
+  margin-top: 40px;
   text-align: center;
   li {
     display: inline-block;
@@ -648,16 +633,17 @@ body {
     }
 
     img {
-      width: 150px;
-      height: 58px;
+      max-width: 150px;
+
+      height: 45px;
     }
   }
   li:nth-child(1) {
-    width: 90px;
+    width: 80px;
     height: 58px;
     line-height: 58px;
     font-family: MicrosoftYaHei;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
     letter-spacing: 0px;
@@ -666,7 +652,7 @@ body {
 }
 
 .index-footer-addr {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 20px;
   max-width: 634px;
   margin-left: auto;
@@ -719,7 +705,7 @@ body {
 .index-footer-scancode {
   position: absolute;
   right: 0px;
-  top: 72px;
+  top: 56px;
   width: 200px;
   height: 200px;
   img {
@@ -804,6 +790,7 @@ body {
   /*内容页*/
   .index-cont {
     .zm {
+      margin-top: 30px;
       text-align: center;
       width: 100%;
 
@@ -826,7 +813,7 @@ body {
   }
   /*企业介绍*/
   .index-cont-jieshao {
-    margin-top: 40px;
+    margin-top: 0px;
 
     .cent {
       position: relative;
@@ -939,7 +926,7 @@ body {
 
   /*产品介绍*/
   .index-cont-prod {
-    margin-top: 50px;
+    margin-top: 30px;
     .zm {
       margin-top: 50px;
       span {
@@ -1042,7 +1029,7 @@ body {
 
   /*新闻列表*/
   .index-cont-news {
-    margin-top: 50px;
+    margin-top: 0;
     margin-bottom: 50px;
     .zm {
       text-align: center;
@@ -1196,7 +1183,6 @@ body {
 
       img {
         width: 80px;
-
         height: 40px;
       }
     }
@@ -1270,9 +1256,9 @@ body {
     img {
       display: inline-block;
       float: none;
-      width: 30%;
-      height: auto;
-      max-height: 300px;
+      width: 120px;
+      height: 120px;
+     
     }
   }
 }
@@ -1317,7 +1303,26 @@ body {
       }
     }
   }
+  .index-footer-link {
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
 
+    li {
+      
+
+      img {
+        width: 80px;
+        height: 40px;
+      }
+    }
+    li:nth-child(1) {
+      width: 90px;
+      height: 50px;
+      line-height: 50px;
+     
+    }
+  }
   .index-footer-scancode {
     position: static;
     display: block;
@@ -1325,10 +1330,10 @@ body {
     height: auto;
     margin-bottom: 20px;
     text-align: center;
-    img {
-      width: 40%;
-      height: auto;
-    }
+    // img {
+    //   width: 40%;
+    //   height: auto;
+    // }
   }
 }
 
@@ -1535,7 +1540,7 @@ body {
   .index-footer-scancode {
     position: absolute;
     right: -60px;
-    top: 120px;
+    top: 106px;
     width: 110px;
     height: 110px;
     img {
@@ -1729,7 +1734,7 @@ body {
   .index-footer-scancode {
     position: absolute;
     right: 0;
-    top: 98px;
+    top: 82px;
     width: 150px;
     height: 150px;
     img {
@@ -1749,9 +1754,10 @@ body {
   }
 }
 
+
 .-ms- {
   .index-cont-news .media .media-heading {
-    max-width: 296px;
+    max-width: 270px;
     margin-bottom: 0px;
     font-family: MicrosoftYaHei;
     font-size: 16px;
@@ -1790,9 +1796,12 @@ body {
 
   @media (min-width: 768px) {
     .index-cont-news .media p {
+      display: block;
+      height: 86px;
       padding: 0 5px;
       font-family: MicrosoftYaHei;
       font-size: 17px;
+      line-height: 22px;
       font-weight: normal;
       font-stretch: normal;
       letter-spacing: 0px;
