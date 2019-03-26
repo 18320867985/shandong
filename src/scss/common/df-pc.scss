@@ -508,11 +508,36 @@ input::-moz-placeholder {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.ellipsis-no {
-  white-space: normal;
-  word-break: break-all;
-  word-wrap: break-word;
+.ellipsis-2 {
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal!important;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
+
+.ellipsis-3 {
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal!important;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.ellipsis-4 {
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal!important;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
 .table-fixed {
   table-layout: fixed;
 }
