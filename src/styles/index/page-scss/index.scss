@@ -84,7 +84,7 @@ body {
         width: 100%;
         height: auto;
         max-height: 450px;
-        min-height: 180px;
+        min-height: 150px;
       }
     }
   }
@@ -1039,6 +1039,10 @@ body {
   .index-cont-news {
     margin-top: 0;
     margin-bottom: 50px;
+    .index-cont-news-cont {
+      margin-top: 30px 
+  }
+   
     .zm {
       text-align: center;
       width: 100%;
@@ -1133,6 +1137,7 @@ body {
       }
     }
   }
+  
 
   /*页脚*/
   .index-footer {
