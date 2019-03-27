@@ -361,6 +361,13 @@
 
 /***小屏 width 0-767 ***/
 @media (max-width: 767px) {
+  ._item {
+   
+    &:hover{
+      //  border: 1px solid orangered;
+       transform: none !important;
+    }
+  }
   .news-list-a-items ._item-r {
     padding: 15px 15px;
 
