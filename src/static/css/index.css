@@ -7412,12 +7412,13 @@ body {
     margin-bottom: 0;
     text-align: center; }
     .index-footer-link li img {
-      width: 80px;
+      width: 70px;
       height: 40px; }
     .index-footer-link li:nth-child(1) {
-      width: 90px;
+      width: 80px;
       height: 50px;
-      line-height: 50px; }
+      line-height: 50px;
+      font-size: 16px; }
   .index-footer-scancode {
     position: static;
     display: block;
@@ -7992,7 +7993,7 @@ body {
   max-height: 726px;
   position: relative;
   background-size: contain;
-  background: url(../../static/images/product-dtl/product-yy.png); }
+  background: url(/static/images/product-dtl/product-yy.png); }
 
 .product-dtl-yy-cont {
   position: absolute;
