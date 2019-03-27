@@ -6811,6 +6811,7 @@ body {
     white-space: normal;
     text-overflow: ellipsis;
     -webkit-line-clamp: 1;
+    overflow: hiddenl;
     -webkit-box-orient: vertical; }
   .index-cont-news .media .media-body {
     width: 100%; }
@@ -7262,6 +7263,7 @@ body {
       margin-bottom: 0px;
       font-family: MicrosoftYaHei;
       font-size: 16px;
+      line-height: 20px;
       font-weight: normal;
       font-stretch: normal;
       letter-spacing: 0px;
