@@ -76,8 +76,8 @@ body {
 /*
 轮播图*/
 .index-cont-swiper {
-   box-shadow: 1px 0 2px #ddd;
-  .carousel-inner { 
+  box-shadow: 1px 0 2px #ddd;
+  .carousel-inner {
     max-height: 450px;
     .item {
       img {
@@ -98,10 +98,10 @@ body {
     }
   }
   .carousel-indicators {
-    li+li{
+    li + li {
       margin-left: 5px;
     }
-    li.active{
+    li.active {
       background: $text-primary;
       border: 1px solid $text-primary;
     }
@@ -109,11 +109,11 @@ body {
 }
 
 /*标题的公共css*/
-.index-cont{
+.index-cont {
   .zm {
     margin-top: 80px;
-     text-align: center;
-    span{
+    text-align: center;
+    span {
       font-family: Roboto-Regular;
       font-size: 36px;
       font-weight: normal;
@@ -122,7 +122,6 @@ body {
       color: #666666;
     }
     span:nth-child(1) {
-      
     }
 
     span:nth-child(2) {
@@ -148,7 +147,6 @@ body {
     text-align: center;
     width: 100%;
   }
-
 
   .cent {
     position: relative;
@@ -275,29 +273,29 @@ body {
 
   .zm {
     span:nth-child(1) {
-      color:#fff;
+      color: #fff;
     }
-
   }
   .ttl {
-   color:#fff;
-   
+    color: #fff;
   }
-
 
   .box {
     width: 1200px;
     margin-top: 50px;
     //background: transparent;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    justify-items: center;
+    // display: flex;
+    // flex-flow: row wrap;
+    // justify-content: center;
+    // justify-items: center;
+     text-align: center;
 
     .box-item {
       // float: left;
+      display: inline-block;
       width: 230px;
       transition: 1s;
+      vertical-align: top;
 
       & + .box-item {
         margin-left: 13px;
@@ -315,8 +313,18 @@ body {
         color: #333;
         font-size: 17px;
         box-shadow: 2px 0 5px #ddd;
+        transition: transform .8s;
+
+        > a {
+           display: block;
+          color: #333;
+          &:hover {
+            color: $text-primary;
+          }
+        }
         &:hover {
           color: $text-primary;
+           transform:  translateX(-15px);
         }
       }
       .box-item-imgs {
@@ -367,14 +375,14 @@ body {
     /*item-4*/
     .box-item:nth-child(4) {
       // float: left;
-      width: 470px;
+      width: 450px;
       box-sizing: border-box;
 
       .box-item-imgs:nth-child(1) {
         display: block;
         float: none;
         height: 198px;
-        width: 470px;
+        width: 450px;
         padding-top: 0;
         margin-bottom: 0;
         text-align: center;
@@ -436,9 +444,8 @@ body {
   a {
     text-decoration: none;
   }
-  .index-cont-news-cont{
+  .index-cont-news-cont {
     margin-top: 50px;
-
   }
   /*左边大图*/
   .thumbnail {
@@ -639,9 +646,10 @@ body {
     }
   }
   li:nth-child(1) {
-    width: 80px;
+     width: 80px;
     height: 58px;
     line-height: 58px;
+     text-align: center;
     font-family: MicrosoftYaHei;
     font-size: 16px;
     font-weight: normal;
@@ -1169,13 +1177,14 @@ body {
 
   .index-footer-link {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
 
     li {
       display: inline-block;
       float: none;
       margin-bottom: 20px;
+      
 
       & + li {
         margin-left: 10px;
@@ -1187,7 +1196,7 @@ body {
       }
     }
     li:nth-child(1) {
-      width: 90px;
+      width: 80px;
       height: 50px;
       line-height: 50px;
       font-family: MicrosoftYaHei;
@@ -1200,7 +1209,7 @@ body {
   }
   .index-footer-addr {
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     ._phone {
       color: #fff;
       &:hover {
@@ -1251,14 +1260,13 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
     img {
       display: inline-block;
       float: none;
       width: 120px;
       height: 120px;
-     
     }
   }
 }
@@ -1309,8 +1317,6 @@ body {
     text-align: center;
 
     li {
-      
-
       img {
         width: 80px;
         height: 40px;
@@ -1320,7 +1326,6 @@ body {
       width: 90px;
       height: 50px;
       line-height: 50px;
-     
     }
   }
   .index-footer-scancode {
@@ -1401,7 +1406,6 @@ body {
   /*内容页*/
   /*企业介绍*/
   .index-cont-jieshao {
-    margin-top: 120px;
 
     .cent {
       position: relative;
@@ -1539,10 +1543,10 @@ body {
   /*页脚*/
   .index-footer-scancode {
     position: absolute;
-    right: -60px;
-    top: 106px;
-    width: 110px;
-    height: 110px;
+    right: 10px;
+    top: 116px;
+    width: 80px;
+    height: 80px;
     img {
       width: 100%;
       height: 100%;
@@ -1595,7 +1599,7 @@ body {
   /*内容页*/
   /*企业介绍*/
   .index-cont-jieshao {
-    margin-top: 120px;
+
 
     .cent {
       position: relative;
@@ -1753,7 +1757,6 @@ body {
     }
   }
 }
-
 
 .-ms- {
   .index-cont-news .media .media-heading {

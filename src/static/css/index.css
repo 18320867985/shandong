@@ -6634,22 +6634,14 @@ body {
   .index-cont-prod .box {
     width: 1200px;
     margin-top: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    justify-items: center;
+    text-align: center;
     /*item-4*/ }
     .index-cont-prod .box .box-item {
+      display: inline-block;
       width: 230px;
       -webkit-transition: 1s;
-      transition: 1s; }
+      transition: 1s;
+      vertical-align: top; }
       .index-cont-prod .box .box-item + .box-item {
         margin-left: 13px; }
       .index-cont-prod .box .box-item .box-item-ttl {
@@ -6665,9 +6657,20 @@ body {
         color: #333;
         font-size: 17px;
         -webkit-box-shadow: 2px 0 5px #ddd;
-                box-shadow: 2px 0 5px #ddd; }
+                box-shadow: 2px 0 5px #ddd;
+        -webkit-transition: -webkit-transform .8s;
+        transition: -webkit-transform .8s;
+        transition: transform .8s;
+        transition: transform .8s, -webkit-transform .8s; }
+        .index-cont-prod .box .box-item .box-item-ttl > a {
+          display: block;
+          color: #333; }
+          .index-cont-prod .box .box-item .box-item-ttl > a:hover {
+            color: #076ce0; }
         .index-cont-prod .box .box-item .box-item-ttl:hover {
-          color: #076ce0; }
+          color: #076ce0;
+          -webkit-transform: translateX(-15px);
+                  transform: translateX(-15px); }
       .index-cont-prod .box .box-item .box-item-imgs {
         width: 230px;
         height: 344px;
@@ -6700,14 +6703,14 @@ body {
           height: 239px;
           width: 100%; }
     .index-cont-prod .box .box-item:nth-child(4) {
-      width: 470px;
+      width: 450px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box; }
       .index-cont-prod .box .box-item:nth-child(4) .box-item-imgs:nth-child(1) {
         display: block;
         float: none;
         height: 198px;
-        width: 470px;
+        width: 450px;
         padding-top: 0;
         margin-bottom: 0;
         text-align: center; }
@@ -6913,6 +6916,7 @@ body {
     width: 80px;
     height: 58px;
     line-height: 58px;
+    text-align: center;
     font-family: MicrosoftYaHei;
     font-size: 16px;
     font-weight: normal;
@@ -7301,7 +7305,7 @@ body {
         color: #f8f8f8; }
   .index-footer-link {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center; }
     .index-footer-link li {
       display: inline-block;
@@ -7313,7 +7317,7 @@ body {
         width: 80px;
         height: 40px; }
     .index-footer-link li:nth-child(1) {
-      width: 90px;
+      width: 80px;
       height: 50px;
       line-height: 50px;
       font-family: MicrosoftYaHei;
@@ -7324,7 +7328,7 @@ body {
       color: #ffffff; }
   .index-footer-addr {
     margin-bottom: 20px;
-    margin-top: 20px; }
+    margin-top: 15px; }
     .index-footer-addr ._phone {
       color: #fff; }
       .index-footer-addr ._phone:hover .glyphicon {
@@ -7367,7 +7371,7 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center; }
     .index-footer-scancode img {
       display: inline-block;
@@ -7464,99 +7468,97 @@ body {
           border-radius: 4px; }
   /*内容页*/
   /*企业介绍*/
-  .index-cont-jieshao {
-    margin-top: 120px; }
-    .index-cont-jieshao .cent {
-      position: relative;
-      margin-top: 120px;
-      text-align: center;
-      /*旋转图*/
-      /*企业理念 */
-      /*企业核心 */
-      /*企业愿景 */
-      /*企业价值 */ }
-      .index-cont-jieshao .cent img {
-        display: inline-block;
-        float: none;
-        width: 320px;
-        height: 320px;
-        -webkit-transition: 2s;
-        transition: 2s; }
-        .index-cont-jieshao .cent img:hover {
-          -webkit-transform: rotate(720deg);
-                  transform: rotate(720deg); }
-      .index-cont-jieshao .cent h3 {
-        width: 96px;
-        height: 23px;
-        margin-bottom: 20px;
-        font-family: MicrosoftYaHei;
-        font-size: 24px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #333333; }
-      .index-cont-jieshao .cent ._positon {
-        position: absolute; }
-      .index-cont-jieshao .cent ._top_l {
-        position: absolute;
-        top: 0px;
-        left: 0;
-        width: 200px;
-        height: 73px;
-        font-family: MicrosoftYaHei;
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #999999; }
-        .index-cont-jieshao .cent ._top_l h3 {
-          width: 100%;
-          text-align: right; }
-      .index-cont-jieshao .cent ._top_r {
-        position: absolute;
-        top: 0px;
-        right: 0;
-        width: 200px;
-        height: 73px;
-        font-family: MicrosoftYaHei;
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #999999; }
-        .index-cont-jieshao .cent ._top_r h3 {
-          width: 100%;
-          text-align: right; }
-      .index-cont-jieshao .cent ._bottom_l {
-        position: absolute;
-        bottom: 0px;
-        left: 0;
-        width: 200px;
-        height: 73px;
-        font-family: MicrosoftYaHei;
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #999999; }
-        .index-cont-jieshao .cent ._bottom_l h3 {
-          width: 100%;
-          text-align: left; }
-      .index-cont-jieshao .cent ._bottom_r {
-        position: absolute;
-        bottom: 0px;
-        right: 0;
-        width: 200px;
-        height: 73px;
-        font-family: MicrosoftYaHei;
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #999999; }
-        .index-cont-jieshao .cent ._bottom_r h3 {
-          width: 100%;
-          text-align: right; }
+  .index-cont-jieshao .cent {
+    position: relative;
+    margin-top: 120px;
+    text-align: center;
+    /*旋转图*/
+    /*企业理念 */
+    /*企业核心 */
+    /*企业愿景 */
+    /*企业价值 */ }
+    .index-cont-jieshao .cent img {
+      display: inline-block;
+      float: none;
+      width: 320px;
+      height: 320px;
+      -webkit-transition: 2s;
+      transition: 2s; }
+      .index-cont-jieshao .cent img:hover {
+        -webkit-transform: rotate(720deg);
+                transform: rotate(720deg); }
+    .index-cont-jieshao .cent h3 {
+      width: 96px;
+      height: 23px;
+      margin-bottom: 20px;
+      font-family: MicrosoftYaHei;
+      font-size: 24px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #333333; }
+    .index-cont-jieshao .cent ._positon {
+      position: absolute; }
+    .index-cont-jieshao .cent ._top_l {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 200px;
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999; }
+      .index-cont-jieshao .cent ._top_l h3 {
+        width: 100%;
+        text-align: right; }
+    .index-cont-jieshao .cent ._top_r {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      width: 200px;
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999; }
+      .index-cont-jieshao .cent ._top_r h3 {
+        width: 100%;
+        text-align: right; }
+    .index-cont-jieshao .cent ._bottom_l {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 200px;
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999; }
+      .index-cont-jieshao .cent ._bottom_l h3 {
+        width: 100%;
+        text-align: left; }
+    .index-cont-jieshao .cent ._bottom_r {
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      width: 200px;
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999; }
+      .index-cont-jieshao .cent ._bottom_r h3 {
+        width: 100%;
+        text-align: right; }
   /*产品介绍*/
   .index-cont-prod .box {
     width: 100%;
@@ -7571,10 +7573,10 @@ body {
   /*页脚*/
   .index-footer-scancode {
     position: absolute;
-    right: -60px;
-    top: 106px;
-    width: 110px;
-    height: 110px; }
+    right: 10px;
+    top: 116px;
+    width: 80px;
+    height: 80px; }
     .index-footer-scancode img {
       width: 100%;
       height: 100%; } }
@@ -7607,99 +7609,97 @@ body {
         border-radius: 4px; }
   /*内容页*/
   /*企业介绍*/
-  .index-cont-jieshao {
-    margin-top: 120px; }
-    .index-cont-jieshao .cent {
-      position: relative;
-      margin-top: 120px;
-      text-align: center;
-      /*旋转图*/
-      /*企业理念 */
-      /*企业核心 */
-      /*企业愿景 */
-      /*企业价值 */ }
-      .index-cont-jieshao .cent img {
-        display: inline-block;
-        float: none;
-        width: 400px;
-        height: 400px;
-        -webkit-transition: 2s;
-        transition: 2s; }
-        .index-cont-jieshao .cent img:hover {
-          -webkit-transform: rotate(720deg);
-                  transform: rotate(720deg); }
-      .index-cont-jieshao .cent h3 {
-        width: 96px;
-        height: 23px;
-        margin-bottom: 20px;
-        font-family: MicrosoftYaHei;
-        font-size: 24px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #333333; }
-      .index-cont-jieshao .cent ._positon {
-        position: absolute; }
-      .index-cont-jieshao .cent ._top_l {
-        position: absolute;
-        top: 0px;
-        left: 0;
-        width: 280px;
-        height: 73px;
-        font-family: MicrosoftYaHei;
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #999999; }
-        .index-cont-jieshao .cent ._top_l h3 {
-          width: 100%;
-          text-align: right; }
-      .index-cont-jieshao .cent ._top_r {
-        position: absolute;
-        top: 0px;
-        right: 0;
-        width: 280px;
-        height: 73px;
-        font-family: MicrosoftYaHei;
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #999999; }
-        .index-cont-jieshao .cent ._top_r h3 {
-          width: 100%;
-          text-align: right; }
-      .index-cont-jieshao .cent ._bottom_l {
-        position: absolute;
-        bottom: 0px;
-        left: 0;
-        width: 280px;
-        height: 73px;
-        font-family: MicrosoftYaHei;
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #999999; }
-        .index-cont-jieshao .cent ._bottom_l h3 {
-          width: 100%;
-          text-align: left; }
-      .index-cont-jieshao .cent ._bottom_r {
-        position: absolute;
-        bottom: 0px;
-        right: 0;
-        width: 280px;
-        height: 73px;
-        font-family: MicrosoftYaHei;
-        font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        letter-spacing: 0px;
-        color: #999999; }
-        .index-cont-jieshao .cent ._bottom_r h3 {
-          width: 100%;
-          text-align: right; }
+  .index-cont-jieshao .cent {
+    position: relative;
+    margin-top: 120px;
+    text-align: center;
+    /*旋转图*/
+    /*企业理念 */
+    /*企业核心 */
+    /*企业愿景 */
+    /*企业价值 */ }
+    .index-cont-jieshao .cent img {
+      display: inline-block;
+      float: none;
+      width: 400px;
+      height: 400px;
+      -webkit-transition: 2s;
+      transition: 2s; }
+      .index-cont-jieshao .cent img:hover {
+        -webkit-transform: rotate(720deg);
+                transform: rotate(720deg); }
+    .index-cont-jieshao .cent h3 {
+      width: 96px;
+      height: 23px;
+      margin-bottom: 20px;
+      font-family: MicrosoftYaHei;
+      font-size: 24px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #333333; }
+    .index-cont-jieshao .cent ._positon {
+      position: absolute; }
+    .index-cont-jieshao .cent ._top_l {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 280px;
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999; }
+      .index-cont-jieshao .cent ._top_l h3 {
+        width: 100%;
+        text-align: right; }
+    .index-cont-jieshao .cent ._top_r {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      width: 280px;
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999; }
+      .index-cont-jieshao .cent ._top_r h3 {
+        width: 100%;
+        text-align: right; }
+    .index-cont-jieshao .cent ._bottom_l {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 280px;
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999; }
+      .index-cont-jieshao .cent ._bottom_l h3 {
+        width: 100%;
+        text-align: left; }
+    .index-cont-jieshao .cent ._bottom_r {
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      width: 280px;
+      height: 73px;
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #999999; }
+      .index-cont-jieshao .cent ._bottom_r h3 {
+        width: 100%;
+        text-align: right; }
   /*产品介绍*/
   .index-cont-prod .box {
     width: 100%;
@@ -7971,7 +7971,7 @@ body {
 /*导航条*/
 .product-dtl-nav {
   margin-left: 10px;
-  margin: 50px 0; }
+  margin: 30px 0; }
   .product-dtl-nav li {
     float: left;
     height: 13px;
@@ -8717,7 +8717,15 @@ body {
             justify-content: center;
     justify-items: center;
     height: 206px;
-    background-color: #f0f2f5; }
+    background-color: #f0f2f5;
+    border: 1px solid #f0f2f5;
+    -webkit-transition: all  .8s;
+    transition: all  .8s; }
+    .news-list-a-items ._item:hover {
+      -webkit-box-shadow: 1px  3px 5px #ccc;
+              box-shadow: 1px  3px 5px #ccc;
+      -webkit-transform: translateX(-15px);
+              transform: translateX(-15px); }
     .news-list-a-items ._item + ._item {
       margin-top: 20px; }
   .news-list-a-items ._item-l {
@@ -8771,9 +8779,7 @@ body {
             flex: 1;
     padding: 20px 34px;
     max-width: 100%;
-    background-color: #f0f2f5;
-    -webkit-box-shadow: 2px 2px 5px #f0f2f5;
-            box-shadow: 2px 2px 5px #f0f2f5; }
+    background-color: #f0f2f5; }
     .news-list-a-items ._item-r h3 {
       margin: 20px 0;
       width: 400px;
@@ -8888,9 +8894,7 @@ body {
               flex: 1;
       padding: 20px 34px;
       max-width: 100%;
-      background-color: #f0f2f5;
-      -webkit-box-shadow: 2px 2px 5px #f0f2f5;
-              box-shadow: 2px 2px 5px #f0f2f5; }
+      background-color: #f0f2f5; }
       .news-list-a-items ._item-r h3 {
         margin: 20px 0;
         height: 22px;
@@ -8976,16 +8980,17 @@ body {
 .news-dtl-ttl h3 {
   margin: 0;
   font-family: MicrosoftYaHei;
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 32px;
+  line-height: 32px;
   font-weight: normal;
   font-stretch: normal;
   letter-spacing: 0px;
   color: #333; }
 
 .news-dtl-content {
-  margin-top: 50px;
-  margin-bottom: 120px; }
+  margin-top: 30px;
+  margin-bottom: 80px;
+  min-height: 400px; }
   .news-dtl-content p {
     font-family: MicrosoftYaHei;
     font-size: 16px;
