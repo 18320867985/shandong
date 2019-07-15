@@ -199,9 +199,9 @@
 		<![endif]-->
 
 <script>
+
 		// 新闻类型 0 或1
-		var type=0;
-	
+		var type=0,now=false;
 		var isShowNumber = true;
 		var isShowPrevNext = true;
 		var isShowFirstLast = true;
@@ -248,8 +248,13 @@
 		});
 
 		function callback(obj) {
-			
-			var id = obj.index; //当前页码
+		
+
+			if(now){
+				obj.index=1; //当前页码
+				now=false;
+			}
+
 			obj.pageItem = 5; //  每页条数
 
 			//obj.data        // 页面数据
@@ -288,6 +293,9 @@
 		//类型切换点击事件
 		$(".news-banner-toggle ._item").on("click", function() {
 			type=$(this).attr("data-type");
+
+			now=true;
+
 			$(this).trigger("pagingCallback");
 		});
 		

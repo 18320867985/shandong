@@ -6957,17 +6957,22 @@ body {
       font-size: 16px;
       font-weight: normal;
       font-stretch: normal;
-      letter-spacing: 0px; }
+      letter-spacing: 0px;
+      text-align: right; }
+      .index-footer-addr ._addr p a {
+        color: #fff; }
     @media (max-width: 767px) {
       .index-footer-addr ._addr {
         padding-top: 30px; }
         .index-footer-addr ._addr p {
-          text-align: center !important; } }
+          text-align: center !important; }
+          .index-footer-addr ._addr p a {
+            color: #fff; } }
 
 .index-footer-scancode {
   position: absolute;
   right: 0px;
-  top: 56px;
+  top: 72px;
   width: 200px;
   height: 200px; }
   .index-footer-scancode img {
@@ -7729,7 +7734,7 @@ body {
   .index-footer-scancode {
     position: absolute;
     right: 0;
-    top: 82px;
+    top: 86px;
     width: 150px;
     height: 150px; }
     .index-footer-scancode img {
@@ -9019,7 +9024,7 @@ body {
   margin: 0;
   font-family: MicrosoftYaHei;
   font-size: 28px;
-  line-height: 34px;
+  line-height: 42px;
   font-weight: normal;
   font-stretch: normal;
   letter-spacing: 0px;

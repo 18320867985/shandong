@@ -282,6 +282,7 @@ function uglify_list(isBuild) {
 }
 
 function rollupBuild(isBuild, name, dir) {
+	
 	return rollup.rollup({
 
 		input: dir + name + "/app.js",
